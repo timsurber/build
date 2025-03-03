@@ -1,24 +1,84 @@
-From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From git@z Thu Jan  1 00:00:00 1970
+Subject: [PATCH v12 1/6] MAINTAINERS: Add entry for Synopsys DesignWare HDMI RX Driver
+From: Dmitry Osipenko <dmitry.osipenko@collabora.com>
+Date: Thu, 27 Feb 2025 08:50:20 +0300
+Message-Id: <20250227055025.766018-2-dmitry.osipenko@collabora.com>
+To: Shreeya Patel <shreeya.patel@collabora.com>, Heiko Stuebner <heiko@sntech.de>, Mauro Carvalho Chehab <mchehab@kernel.org>, Hans Verkuil <hverkuil@xs4all.nl>, Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, jose.abreu@synopsys.com, nelson.costa@synopsys.com, shawn.wen@rock-chips.com, nicolas.dufresne@collabora.com, Sebastian Reichel <sebastian.reichel@collabora.com>
+Cc: kernel@collabora.com, linux-media@vger.kernel.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org, Tim Surber <me@timsurber.de>, Christophe JAILLET <christophe.jaillet@wanadoo.fr>, Diederik de Haas <didi.debian@cknow.org>
+In-Reply-To: <20250227055025.766018-1-dmitry.osipenko@collabora.com>
+References: <20250227055025.766018-1-dmitry.osipenko@collabora.com>
+List-Id: <devicetree.vger.kernel.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
 From: Shreeya Patel <shreeya.patel@collabora.com>
-Date: Fri, 19 Jul 2024 18:10:30 +0530
-Subject: dt-bindings: media: Document bindings for HDMI RX Controller
+
+Add an entry for Synopsys DesignWare HDMI Receiver Controller
+Driver.
+
+Reviewed-by: Christopher Obbard <chris.obbard@collabora.com>
+Signed-off-by: Shreeya Patel <shreeya.patel@collabora.com>
+Signed-off-by: Dmitry Osipenko <dmitry.osipenko@collabora.com>
+---
+ MAINTAINERS | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 2286200b355b..1bb6a54e41c6 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -22952,6 +22952,14 @@ F:	drivers/net/pcs/pcs-xpcs.c
+ F:	drivers/net/pcs/pcs-xpcs.h
+ F:	include/linux/pcs/pcs-xpcs.h
+ 
++SYNOPSYS DESIGNWARE HDMI RX CONTROLLER DRIVER
++M:	Shreeya Patel <shreeya.patel@collabora.com>
++L:	linux-media@vger.kernel.org
++L:	kernel@collabora.com
++S:	Maintained
++F:	Documentation/devicetree/bindings/media/snps,dw-hdmi-rx.yaml
++F:	drivers/media/platform/synopsys/hdmirx/*
++
+ SYNOPSYS DESIGNWARE I2C DRIVER
+ M:	Jarkko Nikula <jarkko.nikula@linux.intel.com>
+ R:	Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+
+-- 
+2.48.1
+
+
+From git@z Thu Jan  1 00:00:00 1970
+Subject: [PATCH v12 2/6] dt-bindings: media: Document bindings for HDMI RX Controller
+From: Dmitry Osipenko <dmitry.osipenko@collabora.com>
+Date: Thu, 27 Feb 2025 08:50:21 +0300
+Message-Id: <20250227055025.766018-3-dmitry.osipenko@collabora.com>
+To: Shreeya Patel <shreeya.patel@collabora.com>, Heiko Stuebner <heiko@sntech.de>, Mauro Carvalho Chehab <mchehab@kernel.org>, Hans Verkuil <hverkuil@xs4all.nl>, Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, jose.abreu@synopsys.com, nelson.costa@synopsys.com, shawn.wen@rock-chips.com, nicolas.dufresne@collabora.com, Sebastian Reichel <sebastian.reichel@collabora.com>
+Cc: kernel@collabora.com, linux-media@vger.kernel.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org, Tim Surber <me@timsurber.de>, Christophe JAILLET <christophe.jaillet@wanadoo.fr>, Diederik de Haas <didi.debian@cknow.org>
+In-Reply-To: <20250227055025.766018-1-dmitry.osipenko@collabora.com>
+References: <20250227055025.766018-1-dmitry.osipenko@collabora.com>
+List-Id: <devicetree.vger.kernel.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+From: Shreeya Patel <shreeya.patel@collabora.com>
 
 Document bindings for the Synopsys DesignWare HDMI RX Controller.
 
-Reviewed-by: Rob Herring <robh@kernel.org>
-Reviewed-by: Dmitry Osipenko <dmitry.osipenko@collabora.com>
-Signed-off-by: Shreeya Patel <shreeya.patel@collabora.com>
 Reviewed-by: Sebastian Reichel <sebastian.reichel@collabora.com>
 Reviewed-by: AngeloGioacchino Del Regno <angelogioacchino.delregno@collabora.com>
-Link: https://lore.kernel.org/r/20240719124032.26852-3-shreeya.patel@collabora.com
-Signed-off-by: Sebastian Reichel <sre@kernel.org>
+Reviewed-by: Rob Herring <robh@kernel.org>
+Signed-off-by: Shreeya Patel <shreeya.patel@collabora.com>
+Signed-off-by: Dmitry Osipenko <dmitry.osipenko@collabora.com>
 ---
- Documentation/devicetree/bindings/media/snps,dw-hdmi-rx.yaml | 132 ++++++++++
+ .../bindings/media/snps,dw-hdmi-rx.yaml       | 132 ++++++++++++++++++
  1 file changed, 132 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/media/snps,dw-hdmi-rx.yaml
 
 diff --git a/Documentation/devicetree/bindings/media/snps,dw-hdmi-rx.yaml b/Documentation/devicetree/bindings/media/snps,dw-hdmi-rx.yaml
 new file mode 100644
-index 000000000000..111111111111
+index 000000000000..510e94e9ca3a
 --- /dev/null
 +++ b/Documentation/devicetree/bindings/media/snps,dw-hdmi-rx.yaml
 @@ -0,0 +1,132 @@
@@ -128,7 +188,7 @@ index 000000000000..111111111111
 +      compatible = "rockchip,rk3588-hdmirx-ctrler", "snps,dw-hdmi-rx";
 +      reg = <0xfdee0000 0x6000>;
 +      interrupts = <GIC_SPI 177 IRQ_TYPE_LEVEL_HIGH 0>,
-+                   <GIC_SPI 436 IRQ_TYPE_LEVEL_HIGH 0>,
++                   <GIC_SPI 178 IRQ_TYPE_LEVEL_HIGH 0>,
 +                   <GIC_SPI 179 IRQ_TYPE_LEVEL_HIGH 0>;
 +      interrupt-names = "cec", "hdmi", "dma";
 +      clocks = <&cru ACLK_HDMIRX>,
@@ -154,135 +214,26 @@ index 000000000000..111111111111
 +      pinctrl-names = "default";
 +      hpd-gpios = <&gpio1 22 GPIO_ACTIVE_LOW>;
 +    };
+
 -- 
-Armbian
+2.48.1
 
-From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+
+From git@z Thu Jan  1 00:00:00 1970
+Subject: [PATCH v12 3/6] media: platform: synopsys: Add support for HDMI input driver
+From: Dmitry Osipenko <dmitry.osipenko@collabora.com>
+Date: Thu, 27 Feb 2025 08:50:22 +0300
+Message-Id: <20250227055025.766018-4-dmitry.osipenko@collabora.com>
+To: Shreeya Patel <shreeya.patel@collabora.com>, Heiko Stuebner <heiko@sntech.de>, Mauro Carvalho Chehab <mchehab@kernel.org>, Hans Verkuil <hverkuil@xs4all.nl>, Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, jose.abreu@synopsys.com, nelson.costa@synopsys.com, shawn.wen@rock-chips.com, nicolas.dufresne@collabora.com, Sebastian Reichel <sebastian.reichel@collabora.com>
+Cc: kernel@collabora.com, linux-media@vger.kernel.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org, Tim Surber <me@timsurber.de>, Christophe JAILLET <christophe.jaillet@wanadoo.fr>, Diederik de Haas <didi.debian@cknow.org>
+In-Reply-To: <20250227055025.766018-1-dmitry.osipenko@collabora.com>
+References: <20250227055025.766018-1-dmitry.osipenko@collabora.com>
+List-Id: <devicetree.vger.kernel.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
 From: Shreeya Patel <shreeya.patel@collabora.com>
-Date: Fri, 19 Jul 2024 18:10:31 +0530
-Subject: arm64: dts: rockchip: Add device tree support for HDMI RX Controller
-
-Add device tree support for Synopsys DesignWare HDMI RX
-Controller.
-
-Reviewed-by: Dmitry Osipenko <dmitry.osipenko@collabora.com>
-Tested-by: Dmitry Osipenko <dmitry.osipenko@collabora.com>
-Co-developed-by: Dingxian Wen <shawn.wen@rock-chips.com>
-Signed-off-by: Dingxian Wen <shawn.wen@rock-chips.com>
-Signed-off-by: Shreeya Patel <shreeya.patel@collabora.com>
-Link: https://lore.kernel.org/r/20240719124032.26852-4-shreeya.patel@collabora.com
-Signed-off-by: Sebastian Reichel <sre@kernel.org>
----
- arch/arm64/boot/dts/rockchip/rk3588-base-pinctrl.dtsi | 14 +++
- arch/arm64/boot/dts/rockchip/rk3588-extra.dtsi        | 56 ++++++++++
- 2 files changed, 70 insertions(+)
-
-diff --git a/arch/arm64/boot/dts/rockchip/rk3588-base-pinctrl.dtsi b/arch/arm64/boot/dts/rockchip/rk3588-base-pinctrl.dtsi
-index 111111111111..222222222222 100644
---- a/arch/arm64/boot/dts/rockchip/rk3588-base-pinctrl.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3588-base-pinctrl.dtsi
-@@ -594,6 +594,20 @@ hdmim0_tx1_hpd: hdmim0-tx1-hpd {
- 				/* hdmim0_tx1_hpd */
- 				<1 RK_PA6 5 &pcfg_pull_none>;
- 		};
-+
-+		/omit-if-no-ref/
-+		hdmim1_rx: hdmim1-rx {
-+			rockchip,pins =
-+				/* hdmim1_rx_cec */
-+				<3 RK_PD1 5 &pcfg_pull_none>,
-+				/* hdmim1_rx_scl */
-+				<3 RK_PD2 5 &pcfg_pull_none_smt>,
-+				/* hdmim1_rx_sda */
-+				<3 RK_PD3 5 &pcfg_pull_none_smt>,
-+				/* hdmim1_rx_hpdin */
-+				<3 RK_PD4 5 &pcfg_pull_none>;
-+		};
-+
- 		/omit-if-no-ref/
- 		hdmim1_rx_cec: hdmim1-rx-cec {
- 			rockchip,pins =
-diff --git a/arch/arm64/boot/dts/rockchip/rk3588-extra.dtsi b/arch/arm64/boot/dts/rockchip/rk3588-extra.dtsi
-index 111111111111..222222222222 100644
---- a/arch/arm64/boot/dts/rockchip/rk3588-extra.dtsi
-+++ b/arch/arm64/boot/dts/rockchip/rk3588-extra.dtsi
-@@ -7,6 +7,29 @@
- #include "rk3588-extra-pinctrl.dtsi"
- 
- / {
-+	reserved-memory {
-+		#address-cells = <2>;
-+		#size-cells = <2>;
-+		ranges;
-+
-+		/*
-+		 * The 4k HDMI capture controller works only with 32bit
-+		 * phys addresses and doesn't support IOMMU. HDMI RX CMA
-+		 * must be reserved below 4GB.
-+		 * The size of 160MB was determined as follows:
-+		 * (3840 * 2160 pixels) * (4 bytes/pixel) * (2 frames/buffer) / 10^6 = 66MB
-+		 * To ensure sufficient support for practical use-cases,
-+		 * we doubled the 66MB value.
-+		 */
-+		hdmi_receiver_cma: hdmi-receiver-cma {
-+			compatible = "shared-dma-pool";
-+			alloc-ranges = <0x0 0x0 0x0 0xffffffff>;
-+			size = <0x0 (160 * 0x100000)>; /* 160MiB */
-+			no-map;
-+			status = "disabled";
-+		};
-+	};
-+
- 	usb_host1_xhci: usb@fc400000 {
- 		compatible = "rockchip,rk3588-dwc3", "snps,dwc3";
- 		reg = <0x0 0xfc400000 0x0 0x400000>;
-@@ -135,6 +158,39 @@ i2s10_8ch: i2s@fde00000 {
- 		status = "disabled";
- 	};
- 
-+	hdmi_receiver: hdmi_receiver@fdee0000 {
-+		compatible = "rockchip,rk3588-hdmirx-ctrler", "snps,dw-hdmi-rx";
-+		reg = <0x0 0xfdee0000 0x0 0x6000>;
-+		power-domains = <&power RK3588_PD_VO1>;
-+		rockchip,grf = <&sys_grf>;
-+		rockchip,vo1-grf = <&vo1_grf>;
-+		interrupts = <GIC_SPI 177 IRQ_TYPE_LEVEL_HIGH 0>,
-+			     <GIC_SPI 436 IRQ_TYPE_LEVEL_HIGH 0>,
-+			     <GIC_SPI 179 IRQ_TYPE_LEVEL_HIGH 0>;
-+		interrupt-names = "cec", "hdmi", "dma";
-+		clocks = <&cru ACLK_HDMIRX>,
-+			 <&cru CLK_HDMIRX_AUD>,
-+			 <&cru CLK_CR_PARA>,
-+			 <&cru PCLK_HDMIRX>,
-+			 <&cru CLK_HDMIRX_REF>,
-+			 <&cru PCLK_S_HDMIRX>,
-+			 <&cru HCLK_VO1>;
-+		clock-names = "aclk",
-+			      "audio",
-+			      "cr_para",
-+			      "pclk",
-+			      "ref",
-+			      "hclk_s_hdmirx",
-+			      "hclk_vo1";
-+		resets = <&cru SRST_A_HDMIRX>, <&cru SRST_P_HDMIRX>,
-+			 <&cru SRST_HDMIRX_REF>, <&cru SRST_A_HDMIRX_BIU>;
-+		reset-names = "axi", "apb", "ref", "biu";
-+		memory-region = <&hdmi_receiver_cma>;
-+		pinctrl-0 = <&hdmim1_rx>;
-+		pinctrl-names = "default";
-+		status = "disabled";
-+	};
-+
- 	pcie3x4: pcie@fe150000 {
- 		compatible = "rockchip,rk3588-pcie", "rockchip,rk3568-pcie";
- 		#address-cells = <3>;
--- 
-Armbian
-
-From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
-From: Shreeya Patel <shreeya.patel@collabora.com>
-Date: Fri, 19 Jul 2024 18:10:32 +0530
-Subject: media: platform: synopsys: Add support for hdmi input driver
 
 Add initial support for the Synopsys DesignWare HDMI RX
 Controller Driver used by Rockchip RK3588. The driver
@@ -295,28 +246,33 @@ supports:
 The hardware also has Audio and HDCP capabilities, but these are
 not yet supported by the driver.
 
-Reviewed-by: Dmitry Osipenko <dmitry.osipenko@collabora.com>
-Tested-by: Dmitry Osipenko <dmitry.osipenko@collabora.com>
 Co-developed-by: Dingxian Wen <shawn.wen@rock-chips.com>
 Signed-off-by: Dingxian Wen <shawn.wen@rock-chips.com>
 Signed-off-by: Shreeya Patel <shreeya.patel@collabora.com>
-Link: https://lore.kernel.org/r/20240719124032.26852-5-shreeya.patel@collabora.com
-Signed-off-by: Sebastian Reichel <sre@kernel.org>
+Signed-off-by: Dmitry Osipenko <dmitry.osipenko@collabora.com>
 ---
- drivers/media/platform/Kconfig                           |    1 +
- drivers/media/platform/Makefile                          |    1 +
- drivers/media/platform/synopsys/Kconfig                  |    3 +
- drivers/media/platform/synopsys/Makefile                 |    2 +
- drivers/media/platform/synopsys/hdmirx/Kconfig           |   27 +
- drivers/media/platform/synopsys/hdmirx/Makefile          |    4 +
- drivers/media/platform/synopsys/hdmirx/snps_hdmirx.c     | 2763 ++++++++++
- drivers/media/platform/synopsys/hdmirx/snps_hdmirx.h     |  394 ++
- drivers/media/platform/synopsys/hdmirx/snps_hdmirx_cec.c |  285 +
- drivers/media/platform/synopsys/hdmirx/snps_hdmirx_cec.h |   44 +
- 10 files changed, 3524 insertions(+)
+ drivers/media/platform/Kconfig                |    1 +
+ drivers/media/platform/Makefile               |    1 +
+ drivers/media/platform/synopsys/Kconfig       |    3 +
+ drivers/media/platform/synopsys/Makefile      |    2 +
+ .../media/platform/synopsys/hdmirx/Kconfig    |   36 +
+ .../media/platform/synopsys/hdmirx/Makefile   |    4 +
+ .../platform/synopsys/hdmirx/snps_hdmirx.c    | 2750 +++++++++++++++++
+ .../platform/synopsys/hdmirx/snps_hdmirx.h    |  394 +++
+ .../synopsys/hdmirx/snps_hdmirx_cec.c         |  284 ++
+ .../synopsys/hdmirx/snps_hdmirx_cec.h         |   44 +
+ 10 files changed, 3519 insertions(+)
+ create mode 100644 drivers/media/platform/synopsys/Kconfig
+ create mode 100644 drivers/media/platform/synopsys/Makefile
+ create mode 100644 drivers/media/platform/synopsys/hdmirx/Kconfig
+ create mode 100644 drivers/media/platform/synopsys/hdmirx/Makefile
+ create mode 100644 drivers/media/platform/synopsys/hdmirx/snps_hdmirx.c
+ create mode 100644 drivers/media/platform/synopsys/hdmirx/snps_hdmirx.h
+ create mode 100644 drivers/media/platform/synopsys/hdmirx/snps_hdmirx_cec.c
+ create mode 100644 drivers/media/platform/synopsys/hdmirx/snps_hdmirx_cec.h
 
 diff --git a/drivers/media/platform/Kconfig b/drivers/media/platform/Kconfig
-index 111111111111..222222222222 100644
+index 85d2627776b6..9287faafdce5 100644
 --- a/drivers/media/platform/Kconfig
 +++ b/drivers/media/platform/Kconfig
 @@ -85,6 +85,7 @@ source "drivers/media/platform/rockchip/Kconfig"
@@ -328,7 +284,7 @@ index 111111111111..222222222222 100644
  source "drivers/media/platform/verisilicon/Kconfig"
  source "drivers/media/platform/via/Kconfig"
 diff --git a/drivers/media/platform/Makefile b/drivers/media/platform/Makefile
-index 111111111111..222222222222 100644
+index ace4e34483dd..6fd7db0541c7 100644
 --- a/drivers/media/platform/Makefile
 +++ b/drivers/media/platform/Makefile
 @@ -28,6 +28,7 @@ obj-y += rockchip/
@@ -341,7 +297,7 @@ index 111111111111..222222222222 100644
  obj-y += via/
 diff --git a/drivers/media/platform/synopsys/Kconfig b/drivers/media/platform/synopsys/Kconfig
 new file mode 100644
-index 000000000000..111111111111
+index 000000000000..4fd521f78425
 --- /dev/null
 +++ b/drivers/media/platform/synopsys/Kconfig
 @@ -0,0 +1,3 @@
@@ -350,7 +306,7 @@ index 000000000000..111111111111
 +source "drivers/media/platform/synopsys/hdmirx/Kconfig"
 diff --git a/drivers/media/platform/synopsys/Makefile b/drivers/media/platform/synopsys/Makefile
 new file mode 100644
-index 000000000000..111111111111
+index 000000000000..3b12c574dd67
 --- /dev/null
 +++ b/drivers/media/platform/synopsys/Makefile
 @@ -0,0 +1,2 @@
@@ -358,16 +314,15 @@ index 000000000000..111111111111
 +obj-y += hdmirx/
 diff --git a/drivers/media/platform/synopsys/hdmirx/Kconfig b/drivers/media/platform/synopsys/hdmirx/Kconfig
 new file mode 100644
-index 000000000000..111111111111
+index 000000000000..527c0d586d37
 --- /dev/null
 +++ b/drivers/media/platform/synopsys/hdmirx/Kconfig
-@@ -0,0 +1,27 @@
+@@ -0,0 +1,36 @@
 +# SPDX-License-Identifier: GPL-2.0
 +
 +config VIDEO_SYNOPSYS_HDMIRX
 +	tristate "Synopsys DesignWare HDMI Receiver driver"
 +	depends on VIDEO_DEV
-+	depends on ARCH_ROCKCHIP
 +	select MEDIA_CONTROLLER
 +	select VIDEO_V4L2_SUBDEV_API
 +	select VIDEOBUF2_DMA_CONTIG
@@ -381,17 +336,27 @@ index 000000000000..111111111111
 +	  To compile this driver as a module, choose M here. The module
 +	  will be called synopsys_hdmirx.
 +
-+config HDMIRX_LOAD_DEFAULT_EDID
++config VIDEO_SYNOPSYS_HDMIRX_LOAD_DEFAULT_EDID
 +	bool "Load default EDID"
 +	depends on VIDEO_SYNOPSYS_HDMIRX
-+	default "y"
 +	help
-+	  Preload the default EDID (Extended Display Identification Data).
-+	  EDID contains information about the capabilities of the display,
-+	  such as supported resolutions, refresh rates, and audio formats.
++	  Preload default EDID (Extended Display Identification Data)
++	  branded by Linux Foundation that exposes display modes up
++	  to 4k@30Hz, which have best compatibility with HDMI transmitters.
++
++	  Enabling this option is recommended for a non-production use-cases.
++	  It will make driver usable out-of-the-box.
++
++	  For a higher display modes you will need to load customized EDID
++	  from userspace using v4l2-ctl tool or by other means.
++
++	  Without enabling this option driver will be practically
++	  non-functional until EDID will be loaded from userspace.
++	  Which is a wanted behavior when using this driver in a
++	  commercial product that should utilize own branded EDID.
 diff --git a/drivers/media/platform/synopsys/hdmirx/Makefile b/drivers/media/platform/synopsys/hdmirx/Makefile
 new file mode 100644
-index 000000000000..111111111111
+index 000000000000..2fa2d9e25300
 --- /dev/null
 +++ b/drivers/media/platform/synopsys/hdmirx/Makefile
 @@ -0,0 +1,4 @@
@@ -401,20 +366,20 @@ index 000000000000..111111111111
 +obj-$(CONFIG_VIDEO_SYNOPSYS_HDMIRX) += synopsys-hdmirx.o
 diff --git a/drivers/media/platform/synopsys/hdmirx/snps_hdmirx.c b/drivers/media/platform/synopsys/hdmirx/snps_hdmirx.c
 new file mode 100644
-index 000000000000..111111111111
+index 000000000000..db9e66e5911c
 --- /dev/null
 +++ b/drivers/media/platform/synopsys/hdmirx/snps_hdmirx.c
-@@ -0,0 +1,2763 @@
+@@ -0,0 +1,2750 @@
 +// SPDX-License-Identifier: GPL-2.0
 +/*
-+ * Copyright (C) 2024 Collabora, Ltd.
++ * Copyright (C) 2025 Collabora, Ltd.
 + * Author: Shreeya Patel <shreeya.patel@collabora.com>
++ * Author: Dmitry Osipenko <dmitry.osipenko@collabora.com>
 + *
 + * Copyright (c) 2021 Rockchip Electronics Co. Ltd.
 + * Author: Dingxian Wen <shawn.wen@rock-chips.com>
 + */
 +
-+#include <linux/arm-smccc.h>
 +#include <linux/clk.h>
 +#include <linux/completion.h>
 +#include <linux/delay.h>
@@ -437,7 +402,6 @@ index 000000000000..111111111111
 +#include <linux/workqueue.h>
 +
 +#include <media/cec.h>
-+#include <media/cec-notifier.h>
 +#include <media/v4l2-common.h>
 +#include <media/v4l2-ctrls.h>
 +#include <media/v4l2-device.h>
@@ -454,36 +418,15 @@ index 000000000000..111111111111
 +#include "snps_hdmirx.h"
 +#include "snps_hdmirx_cec.h"
 +
++#define EDID_NUM_BLOCKS_MAX				4
++#define EDID_BLOCK_SIZE					128
++#define HDMIRX_PLANE_Y					0
++#define HDMIRX_PLANE_CBCR				1
++#define FILTER_FRAME_CNT				6
++
 +static int debug;
 +module_param(debug, int, 0644);
 +MODULE_PARM_DESC(debug, "debug level (0-3)");
-+
-+#define EDID_NUM_BLOCKS_MAX			2
-+#define EDID_BLOCK_SIZE				128
-+#define HDMIRX_STORED_BIT_WIDTH			8
-+#define IREF_CLK_FREQ_HZ			428571429
-+#define MEMORY_ALIGN_ROUND_UP_BYTES		64
-+#define HDMIRX_PLANE_Y				0
-+#define HDMIRX_PLANE_CBCR			1
-+#define RK_IRQ_HDMIRX_HDMI			210
-+#define FILTER_FRAME_CNT			6
-+#define RK_SIP_FIQ_CTRL				0x82000024
-+#define SIP_WDT_CFG				0x82000026
-+#define DETECTION_THRESHOLD			7
-+
-+/* fiq control sub func */
-+enum {
-+	RK_SIP_FIQ_CTRL_FIQ_EN = 1,
-+	RK_SIP_FIQ_CTRL_FIQ_DIS,
-+	RK_SIP_FIQ_CTRL_SET_AFF
-+};
-+
-+/* SIP_WDT_CONFIG call types  */
-+enum {
-+	WDT_START = 0,
-+	WDT_STOP = 1,
-+	WDT_PING = 2,
-+};
 +
 +enum hdmirx_pix_fmt {
 +	HDMIRX_RGB888 = 0,
@@ -519,7 +462,7 @@ index 000000000000..111111111111
 +	HDMIRX_NUM_RST,
 +};
 +
-+static const char * const pix_fmt_str[] = {
++static const char *const pix_fmt_str[] = {
 +	"RGB888",
 +	"YUV422",
 +	"YUV444",
@@ -558,13 +501,11 @@ index 000000000000..111111111111
 +	struct v4l2_ctrl_handler hdl;
 +	struct v4l2_ctrl *detect_tx_5v_ctrl;
 +	struct v4l2_ctrl *rgb_range;
++	struct v4l2_ctrl *content_type;
 +	struct v4l2_dv_timings timings;
 +	struct gpio_desc *detect_5v_gpio;
-+	struct work_struct work_wdt_config;
 +	struct delayed_work delayed_work_hotplug;
 +	struct delayed_work delayed_work_res_change;
-+	struct delayed_work delayed_work_heartbeat;
-+	struct cec_notifier *cec_notifier;
 +	struct hdmirx_cec *cec;
 +	struct mutex stream_lock; /* to lock video stream capture */
 +	struct mutex work_lock; /* to lock the critical section of hotplug event */
@@ -575,59 +516,23 @@ index 000000000000..111111111111
 +	struct completion cr_write_done;
 +	struct completion timer_base_lock;
 +	struct completion avi_pkt_rcv;
++	struct dentry *debugfs_dir;
++	struct v4l2_debugfs_if *infoframes;
 +	enum hdmirx_pix_fmt pix_fmt;
 +	void __iomem *regs;
 +	int hdmi_irq;
 +	int dma_irq;
 +	int det_irq;
-+	bool hpd_trigger_level;
++	bool hpd_trigger_level_high;
 +	bool tmds_clk_ratio;
-+	bool is_dvi_mode;
-+	bool got_timing;
++	bool plugged;
 +	u32 num_clks;
 +	u32 edid_blocks_written;
-+	u32 cur_vic;
 +	u32 cur_fmt_fourcc;
 +	u32 color_depth;
-+	u8 edid[EDID_BLOCK_SIZE * 2];
++	u8 edid[EDID_NUM_BLOCKS_MAX * EDID_BLOCK_SIZE];
 +	hdmi_codec_plugged_cb plugged_cb;
 +	spinlock_t rst_lock; /* to lock register access */
-+};
-+
-+static u8 edid_init_data_340M[] = {
-+	0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x00,
-+	0x49, 0x70, 0x88, 0x35, 0x01, 0x00, 0x00, 0x00,
-+	0x2D, 0x1F, 0x01, 0x03, 0x80, 0x78, 0x44, 0x78,
-+	0x0A, 0xCF, 0x74, 0xA3, 0x57, 0x4C, 0xB0, 0x23,
-+	0x09, 0x48, 0x4C, 0x21, 0x08, 0x00, 0x61, 0x40,
-+	0x01, 0x01, 0x81, 0x00, 0x95, 0x00, 0xA9, 0xC0,
-+	0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x02, 0x3A,
-+	0x80, 0x18, 0x71, 0x38, 0x2D, 0x40, 0x58, 0x2C,
-+	0x45, 0x00, 0x20, 0xC2, 0x31, 0x00, 0x00, 0x1E,
-+	0x01, 0x1D, 0x00, 0x72, 0x51, 0xD0, 0x1E, 0x20,
-+	0x6E, 0x28, 0x55, 0x00, 0x20, 0xC2, 0x31, 0x00,
-+	0x00, 0x1E, 0x00, 0x00, 0x00, 0xFC, 0x00, 0x52,
-+	0x4B, 0x2D, 0x55, 0x48, 0x44, 0x0A, 0x20, 0x20,
-+	0x20, 0x20, 0x20, 0x20, 0x00, 0x00, 0x00, 0xFD,
-+	0x00, 0x3B, 0x46, 0x1F, 0x8C, 0x3C, 0x00, 0x0A,
-+	0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x01, 0xA7,
-+
-+	0x02, 0x03, 0x2F, 0xD1, 0x51, 0x07, 0x16, 0x14,
-+	0x05, 0x01, 0x03, 0x12, 0x13, 0x84, 0x22, 0x1F,
-+	0x90, 0x5D, 0x5E, 0x5F, 0x60, 0x61, 0x23, 0x09,
-+	0x07, 0x07, 0x83, 0x01, 0x00, 0x00, 0x67, 0x03,
-+	0x0C, 0x00, 0x30, 0x00, 0x10, 0x44, 0xE3, 0x05,
-+	0x03, 0x01, 0xE4, 0x0F, 0x00, 0x80, 0x01, 0x02,
-+	0x3A, 0x80, 0x18, 0x71, 0x38, 0x2D, 0x40, 0x58,
-+	0x2C, 0x45, 0x00, 0x20, 0xC2, 0x31, 0x00, 0x00,
-+	0x1E, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-+	0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-+	0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-+	0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-+	0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-+	0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-+	0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-+	0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x1F,
 +};
 +
 +static const struct v4l2_dv_timings cea640x480 = V4L2_DV_BT_CEA_640X480P59_94;
@@ -647,44 +552,35 @@ index 000000000000..111111111111
 +
 +static void hdmirx_writel(struct snps_hdmirx_dev *hdmirx_dev, int reg, u32 val)
 +{
-+	unsigned long lock_flags = 0;
++	guard(spinlock_irqsave)(&hdmirx_dev->rst_lock);
 +
-+	spin_lock_irqsave(&hdmirx_dev->rst_lock, lock_flags);
 +	writel(val, hdmirx_dev->regs + reg);
-+	spin_unlock_irqrestore(&hdmirx_dev->rst_lock, lock_flags);
 +}
 +
 +static u32 hdmirx_readl(struct snps_hdmirx_dev *hdmirx_dev, int reg)
 +{
-+	unsigned long lock_flags = 0;
-+	u32 val;
++	guard(spinlock_irqsave)(&hdmirx_dev->rst_lock);
 +
-+	spin_lock_irqsave(&hdmirx_dev->rst_lock, lock_flags);
-+	val = readl(hdmirx_dev->regs + reg);
-+	spin_unlock_irqrestore(&hdmirx_dev->rst_lock, lock_flags);
-+	return val;
++	return readl(hdmirx_dev->regs + reg);
 +}
 +
 +static void hdmirx_reset_dma(struct snps_hdmirx_dev *hdmirx_dev)
 +{
-+	unsigned long lock_flags = 0;
++	guard(spinlock_irqsave)(&hdmirx_dev->rst_lock);
 +
-+	spin_lock_irqsave(&hdmirx_dev->rst_lock, lock_flags);
 +	reset_control_reset(hdmirx_dev->resets[0].rstc);
-+	spin_unlock_irqrestore(&hdmirx_dev->rst_lock, lock_flags);
 +}
 +
 +static void hdmirx_update_bits(struct snps_hdmirx_dev *hdmirx_dev, int reg,
 +			       u32 mask, u32 data)
 +{
-+	unsigned long lock_flags = 0;
 +	u32 val;
 +
-+	spin_lock_irqsave(&hdmirx_dev->rst_lock, lock_flags);
++	guard(spinlock_irqsave)(&hdmirx_dev->rst_lock);
++
 +	val = readl(hdmirx_dev->regs + reg) & ~mask;
 +	val |= (data & mask);
 +	writel(val, hdmirx_dev->regs + reg);
-+	spin_unlock_irqrestore(&hdmirx_dev->rst_lock, lock_flags);
 +}
 +
 +static int hdmirx_subscribe_event(struct v4l2_fh *fh,
@@ -692,9 +588,7 @@ index 000000000000..111111111111
 +{
 +	switch (sub->type) {
 +	case V4L2_EVENT_SOURCE_CHANGE:
-+		if (fh->vdev->vfl_dir == VFL_DIR_RX)
-+			return v4l2_src_change_event_subscribe(fh, sub);
-+		break;
++		return v4l2_src_change_event_subscribe(fh, sub);
 +	case V4L2_EVENT_CTRL:
 +		return v4l2_ctrl_subscribe_event(fh, sub);
 +	default:
@@ -706,20 +600,20 @@ index 000000000000..111111111111
 +
 +static bool tx_5v_power_present(struct snps_hdmirx_dev *hdmirx_dev)
 +{
++	const unsigned int detection_threshold = 7;
++	int val, i, cnt = 0;
 +	bool ret;
-+	int val, i, cnt;
 +
-+	cnt = 0;
 +	for (i = 0; i < 10; i++) {
 +		usleep_range(1000, 1100);
 +		val = gpiod_get_value(hdmirx_dev->detect_5v_gpio);
 +		if (val > 0)
 +			cnt++;
-+		if (cnt >= DETECTION_THRESHOLD)
++		if (cnt >= detection_threshold)
 +			break;
 +	}
 +
-+	ret = (cnt >= DETECTION_THRESHOLD) ? true : false;
++	ret = (cnt >= detection_threshold) ? true : false;
 +	v4l2_dbg(3, debug, &hdmirx_dev->v4l2_dev, "%s: %d\n", __func__, ret);
 +
 +	return ret;
@@ -741,118 +635,40 @@ index 000000000000..111111111111
 +	return true;
 +}
 +
-+static void hdmirx_get_colordepth(struct snps_hdmirx_dev *hdmirx_dev)
-+{
-+	struct v4l2_device *v4l2_dev = &hdmirx_dev->v4l2_dev;
-+	u32 val, color_depth_reg;
-+
-+	val = hdmirx_readl(hdmirx_dev, DMA_STATUS11);
-+	color_depth_reg = (val & HDMIRX_COLOR_DEPTH_MASK) >> 3;
-+
-+	switch (color_depth_reg) {
-+	case 0x4:
-+		hdmirx_dev->color_depth = 24;
-+		break;
-+	case 0x5:
-+		hdmirx_dev->color_depth = 30;
-+		break;
-+	case 0x6:
-+		hdmirx_dev->color_depth = 36;
-+		break;
-+	case 0x7:
-+		hdmirx_dev->color_depth = 48;
-+		break;
-+	default:
-+		hdmirx_dev->color_depth = 24;
-+		break;
-+	}
-+
-+	v4l2_dbg(1, debug, v4l2_dev, "%s: color_depth: %d, reg_val:%d\n",
-+		 __func__, hdmirx_dev->color_depth, color_depth_reg);
-+}
-+
-+static void hdmirx_get_pix_fmt(struct snps_hdmirx_dev *hdmirx_dev)
-+{
-+	struct v4l2_device *v4l2_dev = &hdmirx_dev->v4l2_dev;
-+	u32 val;
-+
-+	val = hdmirx_readl(hdmirx_dev, DMA_STATUS11);
-+	hdmirx_dev->pix_fmt = val & HDMIRX_FORMAT_MASK;
-+
-+	switch (hdmirx_dev->pix_fmt) {
-+	case HDMIRX_RGB888:
-+		hdmirx_dev->cur_fmt_fourcc = V4L2_PIX_FMT_BGR24;
-+		break;
-+	case HDMIRX_YUV422:
-+		hdmirx_dev->cur_fmt_fourcc = V4L2_PIX_FMT_NV16;
-+		break;
-+	case HDMIRX_YUV444:
-+		hdmirx_dev->cur_fmt_fourcc = V4L2_PIX_FMT_NV24;
-+		break;
-+	case HDMIRX_YUV420:
-+		hdmirx_dev->cur_fmt_fourcc = V4L2_PIX_FMT_NV12;
-+		break;
-+	default:
-+		v4l2_err(v4l2_dev,
-+			 "%s: err pix_fmt: %d, set RGB888 as default\n",
-+			 __func__, hdmirx_dev->pix_fmt);
-+		hdmirx_dev->pix_fmt = HDMIRX_RGB888;
-+		hdmirx_dev->cur_fmt_fourcc = V4L2_PIX_FMT_BGR24;
-+		break;
-+	}
-+
-+	v4l2_dbg(1, debug, v4l2_dev, "%s: pix_fmt: %s\n", __func__,
-+		 pix_fmt_str[hdmirx_dev->pix_fmt]);
-+}
-+
 +static void hdmirx_get_timings(struct snps_hdmirx_dev *hdmirx_dev,
-+			       struct v4l2_bt_timings *bt, bool from_dma)
++			       struct v4l2_bt_timings *bt)
 +{
 +	struct v4l2_device *v4l2_dev = &hdmirx_dev->v4l2_dev;
 +	u32 hact, vact, htotal, vtotal, fps;
 +	u32 hfp, hs, hbp, vfp, vs, vbp;
 +	u32 val;
 +
-+	if (from_dma) {
-+		val = hdmirx_readl(hdmirx_dev, DMA_STATUS2);
-+		hact = (val >> 16) & 0xffff;
-+		vact = val & 0xffff;
-+		val = hdmirx_readl(hdmirx_dev, DMA_STATUS3);
-+		htotal = (val >> 16) & 0xffff;
-+		vtotal = val & 0xffff;
-+		val = hdmirx_readl(hdmirx_dev, DMA_STATUS4);
-+		hs = (val >> 16) & 0xffff;
-+		vs = val & 0xffff;
-+		val = hdmirx_readl(hdmirx_dev, DMA_STATUS5);
-+		hbp = (val >> 16) & 0xffff;
-+		vbp = val & 0xffff;
-+		hfp = htotal - hact - hs - hbp;
-+		vfp = vtotal - vact - vs - vbp;
-+	} else {
-+		val = hdmirx_readl(hdmirx_dev, VMON_STATUS1);
-+		hs = (val >> 16) & 0xffff;
-+		hfp = val & 0xffff;
-+		val = hdmirx_readl(hdmirx_dev, VMON_STATUS2);
-+		hbp = val & 0xffff;
-+		val = hdmirx_readl(hdmirx_dev, VMON_STATUS3);
-+		htotal = (val >> 16) & 0xffff;
-+		hact = val & 0xffff;
-+		val = hdmirx_readl(hdmirx_dev, VMON_STATUS4);
-+		vs = (val >> 16) & 0xffff;
-+		vfp = val & 0xffff;
-+		val = hdmirx_readl(hdmirx_dev, VMON_STATUS5);
-+		vbp = val & 0xffff;
-+		val = hdmirx_readl(hdmirx_dev, VMON_STATUS6);
-+		vtotal = (val >> 16) & 0xffff;
-+		vact = val & 0xffff;
-+		if (hdmirx_dev->pix_fmt == HDMIRX_YUV420)
-+			hact *= 2;
-+	}
-+	if (hdmirx_dev->pix_fmt == HDMIRX_YUV420)
++	val = hdmirx_readl(hdmirx_dev, DMA_STATUS2);
++	hact = (val >> 16) & 0xffff;
++	vact = val & 0xffff;
++
++	val = hdmirx_readl(hdmirx_dev, DMA_STATUS3);
++	htotal = (val >> 16) & 0xffff;
++	vtotal = val & 0xffff;
++
++	val = hdmirx_readl(hdmirx_dev, DMA_STATUS4);
++	hs = (val >> 16) & 0xffff;
++	vs = val & 0xffff;
++
++	val = hdmirx_readl(hdmirx_dev, DMA_STATUS5);
++	hbp = (val >> 16) & 0xffff;
++	vbp = val & 0xffff;
++
++	if (hdmirx_dev->pix_fmt == HDMIRX_YUV420) {
 +		htotal *= 2;
++		hbp *= 2;
++		hs *= 2;
++	}
++
++	hfp = htotal - hact - hs - hbp;
++	vfp = vtotal - vact - vs - vbp;
++
 +	fps = (bt->pixelclock + (htotal * vtotal) / 2) / (htotal * vtotal);
-+	if (hdmirx_dev->pix_fmt == HDMIRX_YUV420)
-+		fps *= 2;
 +	bt->width = hact;
 +	bt->height = vact;
 +	bt->hfrontporch = hfp;
@@ -862,17 +678,31 @@ index 000000000000..111111111111
 +	bt->vsync = vs;
 +	bt->vbackporch = vbp;
 +
-+	v4l2_dbg(1, debug, v4l2_dev, "get timings from %s\n", from_dma ? "dma" : "ctrl");
-+	v4l2_dbg(1, debug, v4l2_dev, "act:%ux%u, total:%ux%u, fps:%u, pixclk:%llu\n",
-+		 bt->width, bt->height, htotal, vtotal, fps, bt->pixelclock);
++	v4l2_dbg(1, debug, v4l2_dev, "get timings from dma\n");
++	v4l2_dbg(1, debug, v4l2_dev,
++		 "act:%ux%u%s, total:%ux%u, fps:%u, pixclk:%llu\n",
++		 bt->width, bt->height, bt->interlaced ? "i" : "p",
++		 htotal, vtotal, fps, bt->pixelclock);
 +
-+	v4l2_dbg(2, debug, v4l2_dev, "hfp:%u, hs:%u, hbp:%u, vfp:%u, vs:%u, vbp:%u\n",
-+		 bt->hfrontporch, bt->hsync, bt->hbackporch,
-+		 bt->vfrontporch, bt->vsync, bt->vbackporch);
++	v4l2_dbg(2, debug, v4l2_dev,
++		 "hfp:%u, hact:%u, hs:%u, hbp:%u, vfp:%u, vact:%u, vs:%u, vbp:%u\n",
++		 bt->hfrontporch, hact, bt->hsync, bt->hbackporch,
++		 bt->vfrontporch, vact, bt->vsync, bt->vbackporch);
++
++	if (bt->interlaced == V4L2_DV_INTERLACED) {
++		bt->height *= 2;
++		bt->il_vfrontporch = bt->vfrontporch;
++		bt->il_vsync = bt->vsync + 1;
++		bt->il_vbackporch = bt->vbackporch;
++	}
 +}
 +
 +static bool hdmirx_check_timing_valid(struct v4l2_bt_timings *bt)
 +{
++	/*
++	 * Sanity-check timing values. Some of the values will be outside
++	 * of a valid range till hardware becomes ready to perform capture.
++	 */
 +	if (bt->width < 100 || bt->width > 5000 ||
 +	    bt->height < 100 || bt->height > 5000)
 +		return false;
@@ -881,44 +711,47 @@ index 000000000000..111111111111
 +	    !bt->vsync || bt->vsync > 100)
 +		return false;
 +
-+	if (!bt->hbackporch || bt->hbackporch > 2000 ||
-+	    !bt->vbackporch || bt->vbackporch > 2000)
++	/*
++	 * According to the CEA-861, 1280x720p25 Hblank timing is up to 2680,
++	 * and all standard video format timings are less than 3000.
++	 */
++	if (!bt->hbackporch || bt->hbackporch > 3000 ||
++	    !bt->vbackporch || bt->vbackporch > 3000)
 +		return false;
 +
-+	if (!bt->hfrontporch || bt->hfrontporch > 2000 ||
-+	    !bt->vfrontporch || bt->vfrontporch > 2000)
++	if (!bt->hfrontporch || bt->hfrontporch > 3000 ||
++	    !bt->vfrontporch || bt->vfrontporch > 3000)
 +		return false;
 +
 +	return true;
 +}
 +
-+static void hdmirx_get_avi_infoframe(struct snps_hdmirx_dev *hdmirx_dev)
++static void hdmirx_toggle_polarity(struct snps_hdmirx_dev *hdmirx_dev)
 +{
-+	struct v4l2_device *v4l2_dev = &hdmirx_dev->v4l2_dev;
-+	union hdmi_infoframe frame = {};
-+	int err, i, b, itr = 0;
-+	u8 aviif[3 + 7 * 4];
-+	u32 val;
++	u32 val = hdmirx_readl(hdmirx_dev, DMA_CONFIG6);
 +
-+	aviif[itr++] = HDMI_INFOFRAME_TYPE_AVI;
-+	val = hdmirx_readl(hdmirx_dev, PKTDEC_AVIIF_PH2_1);
-+	aviif[itr++] = val & 0xff;
-+	aviif[itr++] = (val >> 8) & 0xff;
-+
-+	for (i = 0; i < 7; i++) {
-+		val = hdmirx_readl(hdmirx_dev, PKTDEC_AVIIF_PB3_0 + 4 * i);
-+
-+		for (b = 0; b < 4; b++)
-+			aviif[itr++] = (val >> (8 * b)) & 0xff;
-+	}
-+
-+	err = hdmi_infoframe_unpack(&frame, aviif, sizeof(aviif));
-+	if (err) {
-+		v4l2_err(v4l2_dev, "failed to unpack AVI infoframe\n");
++	if (!(val & (VSYNC_TOGGLE_EN | HSYNC_TOGGLE_EN))) {
++		hdmirx_update_bits(hdmirx_dev, DMA_CONFIG6,
++				   VSYNC_TOGGLE_EN | HSYNC_TOGGLE_EN,
++				   VSYNC_TOGGLE_EN | HSYNC_TOGGLE_EN);
++		hdmirx_update_bits(hdmirx_dev, VIDEO_CONFIG2,
++				   VPROC_VSYNC_POL_OVR_VALUE |
++				   VPROC_VSYNC_POL_OVR_EN |
++				   VPROC_HSYNC_POL_OVR_VALUE |
++				   VPROC_HSYNC_POL_OVR_EN,
++				   VPROC_VSYNC_POL_OVR_EN |
++				   VPROC_HSYNC_POL_OVR_EN);
 +		return;
 +	}
 +
-+	v4l2_ctrl_s_ctrl(hdmirx_dev->rgb_range, frame.avi.quantization_range);
++	hdmirx_update_bits(hdmirx_dev, DMA_CONFIG6,
++			   VSYNC_TOGGLE_EN | HSYNC_TOGGLE_EN, 0);
++
++	hdmirx_update_bits(hdmirx_dev, VIDEO_CONFIG2,
++			   VPROC_VSYNC_POL_OVR_VALUE |
++			   VPROC_VSYNC_POL_OVR_EN |
++			   VPROC_HSYNC_POL_OVR_VALUE |
++			   VPROC_HSYNC_POL_OVR_EN, 0);
 +}
 +
 +/*
@@ -928,54 +761,73 @@ index 000000000000..111111111111
 + * change in the sync polarity, potentially leading to DMA errors.
 + */
 +static int hdmirx_get_detected_timings(struct snps_hdmirx_dev *hdmirx_dev,
-+				       struct v4l2_dv_timings *timings,
-+				       bool from_dma)
++				       struct v4l2_dv_timings *timings)
 +{
 +	struct v4l2_device *v4l2_dev = &hdmirx_dev->v4l2_dev;
 +	struct v4l2_bt_timings *bt = &timings->bt;
-+	u32 field_type, color_depth, deframer_st;
 +	u32 val, tmdsqpclk_freq, pix_clk;
++	u32 field_type, deframer_st;
 +	u64 tmp_data, tmds_clk;
++	bool is_dvi_mode;
++	int num_retries = 0;
++	int ret;
 +
++	mutex_lock(&hdmirx_dev->work_lock);
++retry:
 +	memset(timings, 0, sizeof(struct v4l2_dv_timings));
 +	timings->type = V4L2_DV_BT_656_1120;
 +
 +	val = hdmirx_readl(hdmirx_dev, DMA_STATUS11);
 +	field_type = (val & HDMIRX_TYPE_MASK) >> 7;
-+	hdmirx_get_pix_fmt(hdmirx_dev);
-+	bt->interlaced = field_type & BIT(0) ? V4L2_DV_INTERLACED : V4L2_DV_PROGRESSIVE;
-+	val = hdmirx_readl(hdmirx_dev, PKTDEC_AVIIF_PB7_4);
-+	hdmirx_dev->cur_vic =  val | VIC_VAL_MASK;
-+	hdmirx_get_colordepth(hdmirx_dev);
-+	color_depth = hdmirx_dev->color_depth;
++
++	if (field_type & BIT(0))
++		bt->interlaced = V4L2_DV_INTERLACED;
++	else
++		bt->interlaced = V4L2_DV_PROGRESSIVE;
++
 +	deframer_st = hdmirx_readl(hdmirx_dev, DEFRAMER_STATUS);
-+	hdmirx_dev->is_dvi_mode = deframer_st & OPMODE_STS_MASK ? false : true;
++	is_dvi_mode = !(deframer_st & OPMODE_STS_MASK);
++
 +	tmdsqpclk_freq = hdmirx_readl(hdmirx_dev, CMU_TMDSQPCLK_FREQ);
 +	tmds_clk = tmdsqpclk_freq * 4 * 1000;
 +	tmp_data = tmds_clk * 24;
-+	do_div(tmp_data, color_depth);
++	do_div(tmp_data, hdmirx_dev->color_depth);
 +	pix_clk = tmp_data;
 +	bt->pixelclock = pix_clk;
 +
-+	hdmirx_get_avi_infoframe(hdmirx_dev);
++	if (hdmirx_dev->pix_fmt == HDMIRX_YUV420)
++		bt->pixelclock *= 2;
 +
-+	hdmirx_get_timings(hdmirx_dev, bt, from_dma);
-+	if (bt->interlaced == V4L2_DV_INTERLACED) {
-+		bt->height *= 2;
-+		bt->il_vsync = bt->vsync + 1;
-+	}
++	hdmirx_get_timings(hdmirx_dev, bt);
 +
-+	v4l2_dbg(2, debug, v4l2_dev, "tmds_clk:%llu\n", tmds_clk);
-+	v4l2_dbg(1, debug, v4l2_dev, "interlace:%d, fmt:%d, vic:%d, color:%d, mode:%s\n",
++	v4l2_dbg(2, debug, v4l2_dev, "tmds_clk:%llu, pix_clk:%d\n", tmds_clk, pix_clk);
++	v4l2_dbg(1, debug, v4l2_dev, "interlace:%d, fmt:%d, color:%d, mode:%s\n",
 +		 bt->interlaced, hdmirx_dev->pix_fmt,
-+		 hdmirx_dev->cur_vic, hdmirx_dev->color_depth,
-+		 hdmirx_dev->is_dvi_mode ? "dvi" : "hdmi");
++		 hdmirx_dev->color_depth,
++		 is_dvi_mode ? "dvi" : "hdmi");
 +	v4l2_dbg(2, debug, v4l2_dev, "deframer_st:%#x\n", deframer_st);
 +
-+	if (!hdmirx_check_timing_valid(bt))
-+		return -EINVAL;
++	/*
++	 * Timing will be invalid until it's latched by HW or if signal's
++	 * polarity doesn't match.
++	 */
++	if (!hdmirx_check_timing_valid(bt)) {
++		if (num_retries++ < 20) {
++			if (num_retries == 10)
++				hdmirx_toggle_polarity(hdmirx_dev);
 +
-+	return 0;
++			usleep_range(10 * 1000, 10 * 1100);
++			goto retry;
++		}
++
++		ret = -ERANGE;
++	} else {
++		ret = 0;
++	}
++
++	mutex_unlock(&hdmirx_dev->work_lock);
++
++	return ret;
 +}
 +
 +static bool port_no_link(struct snps_hdmirx_dev *hdmirx_dev)
@@ -1001,7 +853,7 @@ index 000000000000..111111111111
 +		return -ENOLCK;
 +	}
 +
-+	ret = hdmirx_get_detected_timings(hdmirx_dev, timings, true);
++	ret = hdmirx_get_detected_timings(hdmirx_dev, timings);
 +	if (ret)
 +		return ret;
 +
@@ -1021,43 +873,28 @@ index 000000000000..111111111111
 +{
 +	struct v4l2_device *v4l2_dev = &hdmirx_dev->v4l2_dev;
 +
-+	v4l2_dbg(1, debug, v4l2_dev, "%s: %sable, hpd_trigger_level:%d\n",
-+		 __func__, en ? "en" : "dis",
-+		 hdmirx_dev->hpd_trigger_level);
++	v4l2_dbg(1, debug, v4l2_dev, "%s: %sable, hpd_trigger_level_high:%d\n",
++		 __func__, en ? "en" : "dis", hdmirx_dev->hpd_trigger_level_high);
++
 +	hdmirx_update_bits(hdmirx_dev, SCDC_CONFIG, HPDLOW, en ? 0 : HPDLOW);
-+	en = hdmirx_dev->hpd_trigger_level ? en : !en;
-+	hdmirx_writel(hdmirx_dev, CORE_CONFIG, en);
++	hdmirx_writel(hdmirx_dev, CORE_CONFIG,
++		      hdmirx_dev->hpd_trigger_level_high ? en : !en);
++
++	/* 100ms delay as per HDMI spec */
++	if (!en)
++		msleep(100);
 +}
 +
-+static int hdmirx_write_edid(struct snps_hdmirx_dev *hdmirx_dev,
-+			     struct v4l2_edid *edid, bool hpd_up)
++static void hdmirx_write_edid_data(struct snps_hdmirx_dev *hdmirx_dev,
++				   u8 *edid, unsigned int num_blocks)
 +{
-+	u32 edid_len = edid->blocks * EDID_BLOCK_SIZE;
-+	char data[300];
-+	u32 i;
-+
-+	memset(edid->reserved, 0, sizeof(edid->reserved));
-+	if (edid->pad)
-+		return -EINVAL;
-+
-+	if (edid->start_block)
-+		return -EINVAL;
-+
-+	if (edid->blocks > EDID_NUM_BLOCKS_MAX) {
-+		edid->blocks = EDID_NUM_BLOCKS_MAX;
-+		return -E2BIG;
-+	}
-+
-+	if (!edid->blocks) {
-+		hdmirx_dev->edid_blocks_written = 0;
-+		return 0;
-+	}
++	static u8 data[EDID_NUM_BLOCKS_MAX * EDID_BLOCK_SIZE];
++	unsigned int edid_len = num_blocks * EDID_BLOCK_SIZE;
++	unsigned int i;
 +
 +	cec_s_phys_addr_from_edid(hdmirx_dev->cec->adap,
-+				  (const struct edid *)edid->edid);
++				  (const struct edid *)edid);
 +
-+	memset(&hdmirx_dev->edid, 0, sizeof(hdmirx_dev->edid));
-+	hdmirx_hpd_ctrl(hdmirx_dev, false);
 +	hdmirx_update_bits(hdmirx_dev, DMA_CONFIG11,
 +			   EDID_READ_EN_MASK |
 +			   EDID_WRITE_EN_MASK |
@@ -1066,7 +903,7 @@ index 000000000000..111111111111
 +			   EDID_WRITE_EN(1) |
 +			   EDID_SLAVE_ADDR(0x50));
 +	for (i = 0; i < edid_len; i++)
-+		hdmirx_writel(hdmirx_dev, DMA_CONFIG10, edid->edid[i]);
++		hdmirx_writel(hdmirx_dev, DMA_CONFIG10, edid[i]);
 +
 +	/* read out for debug */
 +	if (debug >= 2) {
@@ -1075,8 +912,7 @@ index 000000000000..111111111111
 +				   EDID_WRITE_EN_MASK,
 +				   EDID_READ_EN(1) |
 +				   EDID_WRITE_EN(0));
-+		edid_len = edid_len > sizeof(data) ? sizeof(data) : edid_len;
-+		memset(data, 0, sizeof(data));
++
 +		for (i = 0; i < edid_len; i++)
 +			data[i] = hdmirx_readl(hdmirx_dev, DMA_STATUS14);
 +
@@ -1085,25 +921,25 @@ index 000000000000..111111111111
 +	}
 +
 +	/*
-+	 * You must set EDID_READ_EN & EDID_WRITE_EN bit to 0,
-+	 * when the read/write edid operation is completed.Otherwise, it
-+	 * will affect the reading and writing of other registers
++	 * Must set EDID_READ_EN & EDID_WRITE_EN bit to 0,
++	 * when the read/write edid operation is completed. Otherwise, it
++	 * will affect the reading and writing of other registers.
 +	 */
 +	hdmirx_update_bits(hdmirx_dev, DMA_CONFIG11,
 +			   EDID_READ_EN_MASK | EDID_WRITE_EN_MASK,
 +			   EDID_READ_EN(0) | EDID_WRITE_EN(0));
++}
++
++static void hdmirx_write_edid(struct snps_hdmirx_dev *hdmirx_dev,
++			      struct v4l2_edid *edid)
++{
++	memset(edid->reserved, 0, sizeof(edid->reserved));
++	memset(hdmirx_dev->edid, 0, sizeof(hdmirx_dev->edid));
++
++	hdmirx_write_edid_data(hdmirx_dev, edid->edid, edid->blocks);
 +
 +	hdmirx_dev->edid_blocks_written = edid->blocks;
-+	memcpy(&hdmirx_dev->edid, edid->edid, edid->blocks * EDID_BLOCK_SIZE);
-+	if (hpd_up) {
-+		if (tx_5v_power_present(hdmirx_dev)) {
-+			/* Add 100ms delay after updating the EDID as per HDMI specs */
-+			msleep(100);
-+			hdmirx_hpd_ctrl(hdmirx_dev, true);
-+		}
-+	}
-+
-+	return 0;
++	memcpy(hdmirx_dev->edid, edid->edid, edid->blocks * EDID_BLOCK_SIZE);
 +}
 +
 +/*
@@ -1121,6 +957,8 @@ index 000000000000..111111111111
 +{
 +	v4l2_dbg(1, debug, &hdmirx_dev->v4l2_dev, "%s: %sable\n",
 +		 __func__, en ? "en" : "dis");
++
++	disable_irq(hdmirx_dev->hdmi_irq);
 +
 +	/* Note: In DVI mode, it needs to be written twice to take effect. */
 +	hdmirx_clear_interrupt(hdmirx_dev, MAINUNIT_0_INT_CLEAR, 0xffffffff);
@@ -1147,15 +985,17 @@ index 000000000000..111111111111
 +		hdmirx_writel(hdmirx_dev, MAINUNIT_2_INT_MASK_N, 0);
 +		hdmirx_writel(hdmirx_dev, AVPUNIT_0_INT_MASK_N, 0);
 +	}
++
++	enable_irq(hdmirx_dev->hdmi_irq);
 +}
 +
 +static void hdmirx_plugout(struct snps_hdmirx_dev *hdmirx_dev)
 +{
-+	struct arm_smccc_res res;
++	if (!hdmirx_dev->plugged)
++		return;
 +
 +	hdmirx_update_bits(hdmirx_dev, SCDC_CONFIG, POWERPROVIDED, 0);
 +	hdmirx_interrupts_setup(hdmirx_dev, false);
-+	hdmirx_hpd_ctrl(hdmirx_dev, false);
 +	hdmirx_update_bits(hdmirx_dev, DMA_CONFIG6, HDMIRX_DMA_EN, 0);
 +	hdmirx_update_bits(hdmirx_dev, DMA_CONFIG4,
 +			   LINE_FLAG_INT_EN |
@@ -1170,36 +1010,64 @@ index 000000000000..111111111111
 +			   PHY_PDDQ, HDMI_DISABLE);
 +	hdmirx_writel(hdmirx_dev, PHYCREG_CONFIG0, 0x0);
 +	cancel_delayed_work(&hdmirx_dev->delayed_work_res_change);
-+	cancel_delayed_work_sync(&hdmirx_dev->delayed_work_heartbeat);
-+	flush_work(&hdmirx_dev->work_wdt_config);
-+	arm_smccc_smc(SIP_WDT_CFG, WDT_STOP, 0, 0, 0, 0, 0, 0, &res);
++
++	/* will be NULL on driver removal */
++	if (hdmirx_dev->rgb_range)
++		v4l2_ctrl_s_ctrl(hdmirx_dev->rgb_range, V4L2_DV_RGB_RANGE_AUTO);
++
++	if (hdmirx_dev->content_type)
++		v4l2_ctrl_s_ctrl(hdmirx_dev->content_type,
++				 V4L2_DV_IT_CONTENT_TYPE_NO_ITC);
++
++	hdmirx_dev->plugged = false;
 +}
 +
 +static int hdmirx_set_edid(struct file *file, void *fh, struct v4l2_edid *edid)
 +{
 +	struct hdmirx_stream *stream = video_drvdata(file);
 +	struct snps_hdmirx_dev *hdmirx_dev = stream->hdmirx_dev;
-+	struct arm_smccc_res res;
-+	int ret;
++	u16 phys_addr;
++	int err;
 +
-+	disable_irq(hdmirx_dev->hdmi_irq);
-+	disable_irq(hdmirx_dev->dma_irq);
-+	arm_smccc_smc(RK_SIP_FIQ_CTRL, RK_SIP_FIQ_CTRL_FIQ_DIS,
-+		      RK_IRQ_HDMIRX_HDMI, 0, 0, 0, 0, 0, &res);
++	if (edid->pad)
++		return -EINVAL;
 +
-+	if (tx_5v_power_present(hdmirx_dev))
-+		hdmirx_plugout(hdmirx_dev);
-+	ret = hdmirx_write_edid(hdmirx_dev, edid, false);
-+	if (ret)
-+		return ret;
++	if (edid->start_block)
++		return -EINVAL;
 +
-+	enable_irq(hdmirx_dev->hdmi_irq);
-+	enable_irq(hdmirx_dev->dma_irq);
-+	arm_smccc_smc(RK_SIP_FIQ_CTRL, RK_SIP_FIQ_CTRL_FIQ_EN,
-+		      RK_IRQ_HDMIRX_HDMI, 0, 0, 0, 0, 0, &res);
-+	queue_delayed_work(system_unbound_wq,
-+			   &hdmirx_dev->delayed_work_hotplug,
-+			   msecs_to_jiffies(500));
++	if (edid->blocks > EDID_NUM_BLOCKS_MAX) {
++		edid->blocks = EDID_NUM_BLOCKS_MAX;
++		return -E2BIG;
++	}
++
++	if (edid->blocks) {
++		phys_addr = cec_get_edid_phys_addr(edid->edid,
++						   edid->blocks * EDID_BLOCK_SIZE,
++						   NULL);
++
++		err = v4l2_phys_addr_validate(phys_addr, &phys_addr, NULL);
++		if (err)
++			return err;
++	}
++
++	/*
++	 * Touching HW registers in parallel with plugin/out handlers
++	 * will bring hardware into a bad state.
++	 */
++	mutex_lock(&hdmirx_dev->work_lock);
++
++	hdmirx_hpd_ctrl(hdmirx_dev, false);
++
++	if (edid->blocks) {
++		hdmirx_write_edid(hdmirx_dev, edid);
++		hdmirx_hpd_ctrl(hdmirx_dev, true);
++	} else {
++		cec_phys_addr_invalidate(hdmirx_dev->cec->adap);
++		hdmirx_dev->edid_blocks_written = 0;
++	}
++
++	mutex_unlock(&hdmirx_dev->work_lock);
++
 +	return 0;
 +}
 +
@@ -1228,7 +1096,7 @@ index 000000000000..111111111111
 +	if (edid->start_block + edid->blocks > hdmirx_dev->edid_blocks_written)
 +		edid->blocks = hdmirx_dev->edid_blocks_written - edid->start_block;
 +
-+	memcpy(edid->edid, &hdmirx_dev->edid, edid->blocks * EDID_BLOCK_SIZE);
++	memcpy(edid->edid, hdmirx_dev->edid, edid->blocks * EDID_BLOCK_SIZE);
 +
 +	v4l2_dbg(1, debug, v4l2_dev, "%s: read EDID:\n", __func__);
 +	if (debug > 0)
@@ -1243,14 +1111,11 @@ index 000000000000..111111111111
 +{
 +	struct hdmirx_stream *stream = video_drvdata(file);
 +	struct snps_hdmirx_dev *hdmirx_dev = stream->hdmirx_dev;
-+	struct v4l2_fract fps;
 +
 +	if (parm->type != V4L2_BUF_TYPE_VIDEO_CAPTURE_MPLANE)
 +		return -EINVAL;
 +
-+	fps = v4l2_calc_timeperframe(&hdmirx_dev->timings);
-+	parm->parm.capture.timeperframe.numerator = fps.numerator;
-+	parm->parm.capture.timeperframe.denominator = fps.denominator;
++	parm->parm.capture.timeperframe = v4l2_calc_timeperframe(&hdmirx_dev->timings);
 +
 +	return 0;
 +}
@@ -1421,6 +1286,7 @@ index 000000000000..111111111111
 +
 +static void hdmirx_controller_init(struct snps_hdmirx_dev *hdmirx_dev)
 +{
++	const unsigned long iref_clk_freq_hz = 428571429;
 +	struct device *dev = hdmirx_dev->dev;
 +
 +	reinit_completion(&hdmirx_dev->timer_base_lock);
@@ -1429,7 +1295,7 @@ index 000000000000..111111111111
 +	hdmirx_update_bits(hdmirx_dev, MAINUNIT_0_INT_MASK_N,
 +			   TIMER_BASE_LOCKED_IRQ, TIMER_BASE_LOCKED_IRQ);
 +	/* write irefclk freq */
-+	hdmirx_writel(hdmirx_dev, GLOBAL_TIMER_REF_BASE, IREF_CLK_FREQ_HZ);
++	hdmirx_writel(hdmirx_dev, GLOBAL_TIMER_REF_BASE, iref_clk_freq_hz);
 +
 +	if (!wait_for_completion_timeout(&hdmirx_dev->timer_base_lock,
 +					 msecs_to_jiffies(20)))
@@ -1457,83 +1323,149 @@ index 000000000000..111111111111
 +			   VS_REMAPFILTER_EN_QST | VS_FILTER_ORDER_QST(0x3));
 +}
 +
-+static void hdmirx_set_negative_pol(struct snps_hdmirx_dev *hdmirx_dev, bool en)
++static void hdmirx_get_colordepth(struct snps_hdmirx_dev *hdmirx_dev)
 +{
-+	if (en) {
-+		hdmirx_update_bits(hdmirx_dev, DMA_CONFIG6,
-+				   VSYNC_TOGGLE_EN | HSYNC_TOGGLE_EN,
-+				   VSYNC_TOGGLE_EN | HSYNC_TOGGLE_EN);
-+		hdmirx_update_bits(hdmirx_dev, VIDEO_CONFIG2,
-+				   VPROC_VSYNC_POL_OVR_VALUE |
-+				   VPROC_VSYNC_POL_OVR_EN |
-+				   VPROC_HSYNC_POL_OVR_VALUE |
-+				   VPROC_HSYNC_POL_OVR_EN,
-+				   VPROC_VSYNC_POL_OVR_EN |
-+				   VPROC_HSYNC_POL_OVR_EN);
++	struct v4l2_device *v4l2_dev = &hdmirx_dev->v4l2_dev;
++	u32 val, color_depth_reg;
++
++	val = hdmirx_readl(hdmirx_dev, DMA_STATUS11);
++	color_depth_reg = (val & HDMIRX_COLOR_DEPTH_MASK) >> 3;
++
++	switch (color_depth_reg) {
++	case 0x4:
++		hdmirx_dev->color_depth = 24;
++		break;
++	case 0x5:
++		hdmirx_dev->color_depth = 30;
++		break;
++	case 0x6:
++		hdmirx_dev->color_depth = 36;
++		break;
++	case 0x7:
++		hdmirx_dev->color_depth = 48;
++		break;
++	default:
++		hdmirx_dev->color_depth = 24;
++		break;
++	}
++
++	v4l2_dbg(1, debug, v4l2_dev, "%s: color_depth: %d, reg_val:%d\n",
++		 __func__, hdmirx_dev->color_depth, color_depth_reg);
++}
++
++static void hdmirx_get_pix_fmt(struct snps_hdmirx_dev *hdmirx_dev)
++{
++	struct v4l2_device *v4l2_dev = &hdmirx_dev->v4l2_dev;
++	u32 val;
++
++	val = hdmirx_readl(hdmirx_dev, DMA_STATUS11);
++	hdmirx_dev->pix_fmt = val & HDMIRX_FORMAT_MASK;
++
++	switch (hdmirx_dev->pix_fmt) {
++	case HDMIRX_RGB888:
++		hdmirx_dev->cur_fmt_fourcc = V4L2_PIX_FMT_BGR24;
++		break;
++	case HDMIRX_YUV422:
++		hdmirx_dev->cur_fmt_fourcc = V4L2_PIX_FMT_NV16;
++		break;
++	case HDMIRX_YUV444:
++		hdmirx_dev->cur_fmt_fourcc = V4L2_PIX_FMT_NV24;
++		break;
++	case HDMIRX_YUV420:
++		hdmirx_dev->cur_fmt_fourcc = V4L2_PIX_FMT_NV12;
++		break;
++	default:
++		v4l2_err(v4l2_dev,
++			 "%s: err pix_fmt: %d, set RGB888 as default\n",
++			 __func__, hdmirx_dev->pix_fmt);
++		hdmirx_dev->pix_fmt = HDMIRX_RGB888;
++		hdmirx_dev->cur_fmt_fourcc = V4L2_PIX_FMT_BGR24;
++		break;
++	}
++
++	v4l2_dbg(1, debug, v4l2_dev, "%s: pix_fmt: %s\n", __func__,
++		 pix_fmt_str[hdmirx_dev->pix_fmt]);
++}
++
++static void hdmirx_read_avi_infoframe(struct snps_hdmirx_dev *hdmirx_dev,
++				      u8 *aviif)
++{
++	unsigned int i, b, itr = 0;
++	u32 val;
++
++	aviif[itr++] = HDMI_INFOFRAME_TYPE_AVI;
++	val = hdmirx_readl(hdmirx_dev, PKTDEC_AVIIF_PH2_1);
++	aviif[itr++] = val & 0xff;
++	aviif[itr++] = (val >> 8) & 0xff;
++
++	for (i = 0; i < 7; i++) {
++		val = hdmirx_readl(hdmirx_dev, PKTDEC_AVIIF_PB3_0 + 4 * i);
++
++		for (b = 0; b < 4; b++)
++			aviif[itr++] = (val >> (8 * b)) & 0xff;
++	}
++}
++
++static void hdmirx_get_avi_infoframe(struct snps_hdmirx_dev *hdmirx_dev)
++{
++	struct v4l2_device *v4l2_dev = &hdmirx_dev->v4l2_dev;
++	union hdmi_infoframe frame = {};
++	u8 aviif[3 + 7 * 4];
++	int err;
++
++	hdmirx_read_avi_infoframe(hdmirx_dev, aviif);
++
++	err = hdmi_infoframe_unpack(&frame, aviif, sizeof(aviif));
++	if (err) {
++		v4l2_err(v4l2_dev, "failed to unpack AVI infoframe\n");
 +		return;
 +	}
 +
-+	hdmirx_update_bits(hdmirx_dev, DMA_CONFIG6,
-+			   VSYNC_TOGGLE_EN | HSYNC_TOGGLE_EN, 0);
++	v4l2_ctrl_s_ctrl(hdmirx_dev->rgb_range, frame.avi.quantization_range);
 +
-+	hdmirx_update_bits(hdmirx_dev, VIDEO_CONFIG2,
-+			   VPROC_VSYNC_POL_OVR_VALUE |
-+			   VPROC_VSYNC_POL_OVR_EN |
-+			   VPROC_HSYNC_POL_OVR_VALUE |
-+			   VPROC_HSYNC_POL_OVR_EN, 0);
++	if (frame.avi.itc)
++		v4l2_ctrl_s_ctrl(hdmirx_dev->content_type,
++				 frame.avi.content_type);
++	else
++		v4l2_ctrl_s_ctrl(hdmirx_dev->content_type,
++				 V4L2_DV_IT_CONTENT_TYPE_NO_ITC);
 +}
 +
-+static int hdmirx_try_to_get_timings(struct snps_hdmirx_dev *hdmirx_dev,
-+				     struct v4l2_dv_timings *timings,
-+				     int try_cnt)
++static ssize_t
++hdmirx_debugfs_if_read(u32 type, void *priv, struct file *filp,
++		       char __user *ubuf, size_t count, loff_t *ppos)
 +{
-+	struct v4l2_device *v4l2_dev = &hdmirx_dev->v4l2_dev;
-+	int i, cnt = 0, fail_cnt = 0, ret = 0;
-+	bool from_dma = false;
++	struct snps_hdmirx_dev *hdmirx_dev = priv;
++	u8 aviif[V4L2_DEBUGFS_IF_MAX_LEN] = {};
++	int len;
 +
-+	hdmirx_set_negative_pol(hdmirx_dev, false);
-+	for (i = 0; i < try_cnt; i++) {
-+		ret = hdmirx_get_detected_timings(hdmirx_dev, timings, from_dma);
-+		if (ret) {
-+			cnt = 0;
-+			fail_cnt++;
-+			if (fail_cnt > 3) {
-+				hdmirx_set_negative_pol(hdmirx_dev, true);
-+				from_dma = true;
-+			}
-+		} else {
-+			cnt++;
-+		}
-+		if (cnt >= 5)
-+			break;
++	if (type != V4L2_DEBUGFS_IF_AVI)
++		return 0;
 +
-+		usleep_range(10 * 1000, 10 * 1100);
-+	}
++	hdmirx_read_avi_infoframe(hdmirx_dev, aviif);
 +
-+	if (try_cnt > 8 && cnt < 5)
-+		v4l2_dbg(1, debug, v4l2_dev, "%s: res not stable\n", __func__);
++	len = aviif[2] + 4;
++	if (len > V4L2_DEBUGFS_IF_MAX_LEN)
++		len = -ENOENT;
++	else
++		len = simple_read_from_buffer(ubuf, count, ppos, aviif, len);
 +
-+	return ret;
++	return len < 0 ? 0 : len;
 +}
 +
 +static void hdmirx_format_change(struct snps_hdmirx_dev *hdmirx_dev)
 +{
-+	struct v4l2_dv_timings timings;
 +	struct hdmirx_stream *stream = &hdmirx_dev->stream;
 +	struct v4l2_device *v4l2_dev = &hdmirx_dev->v4l2_dev;
-+	const struct v4l2_event ev_src_chg = {
++	static const struct v4l2_event ev_src_chg = {
 +		.type = V4L2_EVENT_SOURCE_CHANGE,
 +		.u.src_change.changes = V4L2_EVENT_SRC_CH_RESOLUTION,
 +	};
 +
-+	if (hdmirx_try_to_get_timings(hdmirx_dev, &timings, 20)) {
-+		queue_delayed_work(system_unbound_wq,
-+				   &hdmirx_dev->delayed_work_hotplug,
-+				   msecs_to_jiffies(20));
-+		return;
-+	}
++	hdmirx_get_pix_fmt(hdmirx_dev);
++	hdmirx_get_colordepth(hdmirx_dev);
++	hdmirx_get_avi_infoframe(hdmirx_dev);
 +
-+	hdmirx_dev->got_timing = true;
 +	v4l2_dbg(1, debug, v4l2_dev, "%s: queue res_chg_event\n", __func__);
 +	v4l2_event_queue(&stream->vdev, &ev_src_chg);
 +}
@@ -1569,65 +1501,11 @@ index 000000000000..111111111111
 +		 __func__, pix_fmt_str[hdmirx_dev->pix_fmt], dma_cfg1);
 +}
 +
-+static int hdmirx_wait_lock_and_get_timing(struct snps_hdmirx_dev *hdmirx_dev)
-+{
-+	struct v4l2_device *v4l2_dev = &hdmirx_dev->v4l2_dev;
-+	u32 mu_status, scdc_status, dma_st10, cmu_st;
-+	u32 i;
-+
-+	for (i = 0; i < 300; i++) {
-+		mu_status = hdmirx_readl(hdmirx_dev, MAINUNIT_STATUS);
-+		scdc_status = hdmirx_readl(hdmirx_dev, SCDC_REGBANK_STATUS3);
-+		dma_st10 = hdmirx_readl(hdmirx_dev, DMA_STATUS10);
-+		cmu_st = hdmirx_readl(hdmirx_dev, CMU_STATUS);
-+
-+		if ((mu_status & TMDSVALID_STABLE_ST) &&
-+		    (dma_st10 & HDMIRX_LOCK) &&
-+		    (cmu_st & TMDSQPCLK_LOCKED_ST))
-+			break;
-+
-+		if (!tx_5v_power_present(hdmirx_dev)) {
-+			v4l2_err(v4l2_dev, "%s: HDMI pull out, return\n", __func__);
-+			return -1;
-+		}
-+
-+		hdmirx_tmds_clk_ratio_config(hdmirx_dev);
-+	}
-+
-+	if (i == 300) {
-+		v4l2_err(v4l2_dev, "%s: signal not lock, tmds_clk_ratio:%d\n",
-+			 __func__, hdmirx_dev->tmds_clk_ratio);
-+		v4l2_err(v4l2_dev, "%s: mu_st:%#x, scdc_st:%#x, dma_st10:%#x\n",
-+			 __func__, mu_status, scdc_status, dma_st10);
-+		return -1;
-+	}
-+
-+	v4l2_info(v4l2_dev, "%s: signal lock ok, i:%d\n", __func__, i);
-+	hdmirx_writel(hdmirx_dev, GLOBAL_SWRESET_REQUEST, DATAPATH_SWRESETREQ);
-+
-+	reinit_completion(&hdmirx_dev->avi_pkt_rcv);
-+	hdmirx_clear_interrupt(hdmirx_dev, PKT_2_INT_CLEAR, 0xffffffff);
-+	hdmirx_update_bits(hdmirx_dev, PKT_2_INT_MASK_N,
-+			   PKTDEC_AVIIF_RCV_IRQ, PKTDEC_AVIIF_RCV_IRQ);
-+
-+	if (!wait_for_completion_timeout(&hdmirx_dev->avi_pkt_rcv,
-+					 msecs_to_jiffies(300))) {
-+		v4l2_err(v4l2_dev, "%s wait avi_pkt_rcv failed\n", __func__);
-+		hdmirx_update_bits(hdmirx_dev, PKT_2_INT_MASK_N,
-+				   PKTDEC_AVIIF_RCV_IRQ, 0);
-+	}
-+
-+	usleep_range(50 * 1000, 50 * 1010);
-+	hdmirx_format_change(hdmirx_dev);
-+
-+	return 0;
-+}
-+
 +static void hdmirx_dma_config(struct snps_hdmirx_dev *hdmirx_dev)
 +{
 +	hdmirx_set_ddr_store_fmt(hdmirx_dev);
 +
-+	/* Note: uv_swap, rb can not swap, doc err*/
++	/* Note: uv_swap, rb can not swap, doc err */
 +	if (hdmirx_dev->cur_fmt_fourcc != V4L2_PIX_FMT_NV16)
 +		hdmirx_update_bits(hdmirx_dev, DMA_CONFIG6, RB_SWAP_EN, RB_SWAP_EN);
 +	else
@@ -1719,9 +1597,10 @@ index 000000000000..111111111111
 +
 +	v4l2_fill_pixfmt_mp(pixm, finfo->format, pixm->width, pixm->height);
 +
-+	for (i = 0; i < pixm->num_planes; i++) {
++	for (i = 0; i < finfo->comp_planes; i++) {
 +		struct v4l2_plane_pix_format *plane_fmt;
 +		int width, height, bpl, size, bpp = 0;
++		const unsigned int hw_align = 64;
 +
 +		if (!i) {
 +			width = pixm->width;
@@ -1745,7 +1624,7 @@ index 000000000000..111111111111
 +			break;
 +		}
 +
-+		bpl = ALIGN(width * bpp, MEMORY_ALIGN_ROUND_UP_BYTES);
++		bpl = ALIGN(width * bpp, hw_align);
 +		size = bpl * height;
 +		imagesize += size;
 +
@@ -1901,12 +1780,12 @@ index 000000000000..111111111111
 +	struct v4l2_device *v4l2_dev = &hdmirx_dev->v4l2_dev;
 +	const struct v4l2_pix_format_mplane *pixm = NULL;
 +	const struct v4l2_format_info *out_finfo;
-+	u32 i, height;
++	u32 i;
 +
 +	pixm = &stream->pixm;
 +	out_finfo = stream->out_finfo;
 +
-+	if (!num_planes || !out_finfo) {
++	if (!out_finfo) {
 +		v4l2_err(v4l2_dev, "%s: out_fmt not set\n", __func__);
 +		return -EINVAL;
 +	}
@@ -1922,7 +1801,6 @@ index 000000000000..111111111111
 +	}
 +
 +	*num_planes = out_finfo->mem_planes;
-+	height = pixm->height;
 +
 +	for (i = 0; i < out_finfo->mem_planes; i++)
 +		sizes[i] = pixm->plane_fmt[i].sizeimage;
@@ -1939,13 +1817,13 @@ index 000000000000..111111111111
 + */
 +static void hdmirx_buf_queue(struct vb2_buffer *vb)
 +{
-+	const struct v4l2_format_info *out_finfo;
-+	struct vb2_v4l2_buffer *vbuf;
-+	struct hdmirx_buffer *hdmirx_buf;
-+	struct vb2_queue *queue;
-+	struct hdmirx_stream *stream;
 +	const struct v4l2_pix_format_mplane *pixm;
-+	unsigned long lock_flags = 0;
++	const struct v4l2_format_info *out_finfo;
++	struct hdmirx_buffer *hdmirx_buf;
++	struct vb2_v4l2_buffer *vbuf;
++	struct hdmirx_stream *stream;
++	struct vb2_queue *queue;
++	unsigned long flags;
 +	int i;
 +
 +	vbuf = to_vb2_v4l2_buffer(vb);
@@ -1977,15 +1855,15 @@ index 000000000000..111111111111
 +		}
 +	}
 +
-+	spin_lock_irqsave(&stream->vbq_lock, lock_flags);
++	spin_lock_irqsave(&stream->vbq_lock, flags);
 +	list_add_tail(&hdmirx_buf->queue, &stream->buf_head);
-+	spin_unlock_irqrestore(&stream->vbq_lock, lock_flags);
++	spin_unlock_irqrestore(&stream->vbq_lock, flags);
 +}
 +
 +static void return_all_buffers(struct hdmirx_stream *stream,
 +			       enum vb2_buffer_state state)
 +{
-+	struct hdmirx_buffer *buf;
++	struct hdmirx_buffer *buf, *tmp;
 +	unsigned long flags;
 +
 +	spin_lock_irqsave(&stream->vbq_lock, flags);
@@ -1996,13 +1874,9 @@ index 000000000000..111111111111
 +	stream->curr_buf = NULL;
 +	stream->next_buf = NULL;
 +
-+	while (!list_empty(&stream->buf_head)) {
-+		buf = list_first_entry(&stream->buf_head,
-+				       struct hdmirx_buffer, queue);
++	list_for_each_entry_safe(buf, tmp, &stream->buf_head, queue) {
 +		list_del(&buf->queue);
-+		spin_unlock_irqrestore(&stream->vbq_lock, flags);
 +		vb2_buffer_done(&buf->vb.vb2_buf, state);
-+		spin_lock_irqsave(&stream->vbq_lock, flags);
 +	}
 +	spin_unlock_irqrestore(&stream->vbq_lock, flags);
 +}
@@ -2014,23 +1888,21 @@ index 000000000000..111111111111
 +	struct v4l2_device *v4l2_dev = &hdmirx_dev->v4l2_dev;
 +	int ret;
 +
-+	v4l2_info(v4l2_dev, "stream start stopping\n");
++	v4l2_dbg(1, debug, v4l2_dev, "stream start stopping\n");
 +	mutex_lock(&hdmirx_dev->stream_lock);
 +	WRITE_ONCE(stream->stopping, true);
 +
 +	/* wait last irq to return the buffer */
 +	ret = wait_event_timeout(stream->wq_stopped, !stream->stopping,
 +				 msecs_to_jiffies(500));
-+	if (!ret) {
-+		v4l2_err(v4l2_dev, "%s: timeout waiting last irq\n",
++	if (!ret)
++		v4l2_dbg(1, debug, v4l2_dev, "%s: timeout waiting last irq\n",
 +			 __func__);
-+		WRITE_ONCE(stream->stopping, false);
-+	}
 +
 +	hdmirx_update_bits(hdmirx_dev, DMA_CONFIG6, HDMIRX_DMA_EN, 0);
 +	return_all_buffers(stream, VB2_BUF_STATE_ERROR);
 +	mutex_unlock(&hdmirx_dev->stream_lock);
-+	v4l2_info(v4l2_dev, "stream stopping finished\n");
++	v4l2_dbg(1, debug, v4l2_dev, "stream stopping finished\n");
 +}
 +
 +static int hdmirx_start_streaming(struct vb2_queue *queue, unsigned int count)
@@ -2043,18 +1915,12 @@ index 000000000000..111111111111
 +	unsigned long lock_flags = 0;
 +	int line_flag;
 +
-+	if (!hdmirx_dev->got_timing) {
-+		v4l2_dbg(1, debug, v4l2_dev, "timing is invalid\n");
-+		return 0;
-+	}
-+
 +	mutex_lock(&hdmirx_dev->stream_lock);
 +	stream->frame_idx = 0;
 +	stream->line_flag_int_cnt = 0;
 +	stream->curr_buf = NULL;
 +	stream->next_buf = NULL;
 +	stream->irq_stat = 0;
-+	queue->min_queued_buffers = 1;
 +
 +	WRITE_ONCE(stream->stopping, false);
 +
@@ -2070,6 +1936,11 @@ index 000000000000..111111111111
 +		}
 +	}
 +	spin_unlock_irqrestore(&stream->vbq_lock, lock_flags);
++
++	if (!stream->curr_buf) {
++		mutex_unlock(&hdmirx_dev->stream_lock);
++		return -ENOMEM;
++	}
 +
 +	v4l2_dbg(2, debug, v4l2_dev,
 +		 "%s: start_stream cur_buf y_addr:%#x, uv_addr:%#x\n",
@@ -2089,7 +1960,7 @@ index 000000000000..111111111111
 +				   LINE_FLAG_NUM_MASK,
 +				   LINE_FLAG_NUM(line_flag));
 +	} else {
-+		v4l2_err(v4l2_dev, "height err: %d\n", bt->height);
++		v4l2_err(v4l2_dev, "invalid BT timing height=%d\n", bt->height);
 +	}
 +
 +	hdmirx_writel(hdmirx_dev, DMA_CONFIG5, 0xffffffff);
@@ -2120,8 +1991,6 @@ index 000000000000..111111111111
 +static const struct vb2_ops hdmirx_vb2_ops = {
 +	.queue_setup = hdmirx_queue_setup,
 +	.buf_queue = hdmirx_buf_queue,
-+	.wait_prepare = vb2_ops_wait_prepare,
-+	.wait_finish = vb2_ops_wait_finish,
 +	.stop_streaming = hdmirx_stop_streaming,
 +	.start_streaming = hdmirx_start_streaming,
 +};
@@ -2141,11 +2010,8 @@ index 000000000000..111111111111
 +	q->timestamp_flags = V4L2_BUF_FLAG_TIMESTAMP_MONOTONIC;
 +	q->lock = &stream->vlock;
 +	q->dev = hdmirx_dev->dev;
-+	/*
-+	 * rk3588 doesn't use iommu and works only with dma buffers
-+	 * that are physically contiguous in memory.
-+	 */
-+	q->dma_attrs = DMA_ATTR_FORCE_CONTIGUOUS;
++	q->min_queued_buffers = 1;
++
 +	return vb2_queue_init(q);
 +}
 +
@@ -2198,7 +2064,7 @@ index 000000000000..111111111111
 +	struct snps_hdmirx_dev *hdmirx_dev = stream->hdmirx_dev;
 +	struct v4l2_device *v4l2_dev = &hdmirx_dev->v4l2_dev;
 +	struct video_device *vdev = &stream->vdev;
-+	int ret = 0;
++	int ret;
 +
 +	strscpy(vdev->name, "stream_hdmirx", sizeof(vdev->name));
 +	INIT_LIST_HEAD(&stream->buf_head);
@@ -2216,8 +2082,9 @@ index 000000000000..111111111111
 +	vdev->lock = &stream->vlock;
 +	vdev->device_caps = V4L2_CAP_VIDEO_CAPTURE_MPLANE |
 +			    V4L2_CAP_STREAMING;
-+	video_set_drvdata(vdev, stream);
 +	vdev->vfl_dir = VFL_DIR_RX;
++
++	video_set_drvdata(vdev, stream);
 +
 +	hdmirx_init_vb2_queue(&stream->buf_queue, stream,
 +			      V4L2_BUF_TYPE_VIDEO_CAPTURE_MPLANE);
@@ -2244,7 +2111,6 @@ index 000000000000..111111111111
 +			   FIFO_UNDERFLOW_INT_EN |
 +			   HDMIRX_AXI_ERROR_INT_EN, 0);
 +	hdmirx_reset_dma(hdmirx_dev);
-+	hdmirx_dev->got_timing = false;
 +	queue_delayed_work(system_unbound_wq,
 +			   &hdmirx_dev->delayed_work_res_change,
 +			   msecs_to_jiffies(50));
@@ -2274,7 +2140,8 @@ index 000000000000..111111111111
 +	struct v4l2_device *v4l2_dev = &hdmirx_dev->v4l2_dev;
 +
 +	if (status & DEFRAMER_VSYNC_THR_REACHED_IRQ) {
-+		v4l2_info(v4l2_dev, "Vertical Sync threshold reached interrupt %#x", status);
++		v4l2_dbg(2, debug, v4l2_dev,
++			 "Vertical Sync threshold reached interrupt %#x", status);
 +		hdmirx_update_bits(hdmirx_dev, AVPUNIT_1_INT_MASK_N,
 +				   DEFRAMER_VSYNC_THR_REACHED_MASK_N, 0);
 +		*handled = true;
@@ -2368,7 +2235,6 @@ index 000000000000..111111111111
 +{
 +	struct snps_hdmirx_dev *hdmirx_dev = dev_id;
 +	struct v4l2_device *v4l2_dev = &hdmirx_dev->v4l2_dev;
-+	struct arm_smccc_res res;
 +	u32 mu0_st, mu2_st, pk2_st, scdc_st, avp1_st, avp0_st;
 +	u32 mu0_mask, mu2_mask, pk2_mask, scdc_mask, avp1_msk, avp0_msk;
 +	bool handled = false;
@@ -2413,8 +2279,6 @@ index 000000000000..111111111111
 +	}
 +
 +	v4l2_dbg(2, debug, v4l2_dev, "%s: en_fiq", __func__);
-+	arm_smccc_smc(RK_SIP_FIQ_CTRL, RK_SIP_FIQ_CTRL_FIQ_EN,
-+		      RK_IRQ_HDMIRX_HDMI, 0, 0, 0, 0, 0, &res);
 +
 +	return handled ? IRQ_HANDLED : IRQ_NONE;
 +}
@@ -2448,6 +2312,7 @@ index 000000000000..111111111111
 +		v4l2_dbg(1, debug, v4l2_dev,
 +			 "%s: last time have no line_flag_irq\n", __func__);
 +
++	/* skip first frames that are expected to come out zeroed from DMA */
 +	if (stream->line_flag_int_cnt <= FILTER_FRAME_CNT)
 +		goto DMA_IDLE_OUT;
 +
@@ -2460,10 +2325,17 @@ index 000000000000..111111111111
 +			if (vb_done) {
 +				vb_done->vb2_buf.timestamp = ktime_get_ns();
 +				vb_done->sequence = stream->frame_idx;
++
++				if (bt->interlaced)
++					vb_done->field = V4L2_FIELD_INTERLACED_TB;
++				else
++					vb_done->field = V4L2_FIELD_NONE;
++
 +				hdmirx_vb_done(stream, vb_done);
 +				stream->frame_idx++;
 +				if (stream->frame_idx == 30)
-+					v4l2_info(v4l2_dev, "rcv frames\n");
++					v4l2_dbg(1, debug, v4l2_dev,
++						 "rcv frames\n");
 +			}
 +
 +			stream->curr_buf = NULL;
@@ -2582,30 +2454,73 @@ index 000000000000..111111111111
 +	return IRQ_HANDLED;
 +}
 +
++static int hdmirx_wait_signal_lock(struct snps_hdmirx_dev *hdmirx_dev)
++{
++	struct v4l2_device *v4l2_dev = &hdmirx_dev->v4l2_dev;
++	u32 mu_status, scdc_status, dma_st10, cmu_st;
++	u32 i;
++
++	for (i = 0; i < 300; i++) {
++		mu_status = hdmirx_readl(hdmirx_dev, MAINUNIT_STATUS);
++		scdc_status = hdmirx_readl(hdmirx_dev, SCDC_REGBANK_STATUS3);
++		dma_st10 = hdmirx_readl(hdmirx_dev, DMA_STATUS10);
++		cmu_st = hdmirx_readl(hdmirx_dev, CMU_STATUS);
++
++		if ((mu_status & TMDSVALID_STABLE_ST) &&
++		    (dma_st10 & HDMIRX_LOCK) &&
++		    (cmu_st & TMDSQPCLK_LOCKED_ST))
++			break;
++
++		if (!tx_5v_power_present(hdmirx_dev)) {
++			v4l2_dbg(1, debug, v4l2_dev,
++				 "%s: HDMI pull out, return\n", __func__);
++			return -1;
++		}
++
++		hdmirx_tmds_clk_ratio_config(hdmirx_dev);
++	}
++
++	if (i == 300) {
++		v4l2_err(v4l2_dev, "%s: signal not lock, tmds_clk_ratio:%d\n",
++			 __func__, hdmirx_dev->tmds_clk_ratio);
++		v4l2_err(v4l2_dev, "%s: mu_st:%#x, scdc_st:%#x, dma_st10:%#x\n",
++			 __func__, mu_status, scdc_status, dma_st10);
++		return -1;
++	}
++
++	v4l2_dbg(1, debug, v4l2_dev, "%s: signal lock ok, i:%d\n", __func__, i);
++	hdmirx_writel(hdmirx_dev, GLOBAL_SWRESET_REQUEST, DATAPATH_SWRESETREQ);
++
++	reinit_completion(&hdmirx_dev->avi_pkt_rcv);
++	hdmirx_clear_interrupt(hdmirx_dev, PKT_2_INT_CLEAR, 0xffffffff);
++	hdmirx_update_bits(hdmirx_dev, PKT_2_INT_MASK_N,
++			   PKTDEC_AVIIF_RCV_IRQ, PKTDEC_AVIIF_RCV_IRQ);
++
++	if (!wait_for_completion_timeout(&hdmirx_dev->avi_pkt_rcv,
++					 msecs_to_jiffies(300))) {
++		v4l2_err(v4l2_dev, "%s wait avi_pkt_rcv failed\n", __func__);
++		hdmirx_update_bits(hdmirx_dev, PKT_2_INT_MASK_N,
++				   PKTDEC_AVIIF_RCV_IRQ, 0);
++	}
++
++	msleep(50);
++	hdmirx_format_change(hdmirx_dev);
++
++	return 0;
++}
++
 +static void hdmirx_plugin(struct snps_hdmirx_dev *hdmirx_dev)
 +{
-+	struct arm_smccc_res res;
-+	int ret;
++	if (hdmirx_dev->plugged)
++		return;
 +
-+	queue_delayed_work(system_unbound_wq,
-+			   &hdmirx_dev->delayed_work_heartbeat,
-+			   msecs_to_jiffies(10));
-+	arm_smccc_smc(SIP_WDT_CFG, WDT_START, 0, 0, 0, 0, 0, 0, &res);
 +	hdmirx_submodule_init(hdmirx_dev);
 +	hdmirx_update_bits(hdmirx_dev, SCDC_CONFIG, POWERPROVIDED,
 +			   POWERPROVIDED);
-+	hdmirx_hpd_ctrl(hdmirx_dev, true);
 +	hdmirx_phy_config(hdmirx_dev);
-+	ret = hdmirx_wait_lock_and_get_timing(hdmirx_dev);
-+	if (ret) {
-+		hdmirx_plugout(hdmirx_dev);
-+		queue_delayed_work(system_unbound_wq,
-+				   &hdmirx_dev->delayed_work_hotplug,
-+				   msecs_to_jiffies(200));
-+		return;
-+	}
-+	hdmirx_dma_config(hdmirx_dev);
 +	hdmirx_interrupts_setup(hdmirx_dev, true);
++
++	hdmirx_dev->plugged = true;
 +}
 +
 +static void hdmirx_delayed_work_hotplug(struct work_struct *work)
@@ -2617,16 +2532,15 @@ index 000000000000..111111111111
 +				  delayed_work_hotplug.work);
 +
 +	mutex_lock(&hdmirx_dev->work_lock);
-+	hdmirx_dev->got_timing = false;
 +	plugin = tx_5v_power_present(hdmirx_dev);
 +	v4l2_ctrl_s_ctrl(hdmirx_dev->detect_tx_5v_ctrl, plugin);
 +	v4l2_dbg(1, debug, &hdmirx_dev->v4l2_dev, "%s: plugin:%d\n",
 +		 __func__, plugin);
 +
++	hdmirx_plugout(hdmirx_dev);
++
 +	if (plugin)
 +		hdmirx_plugin(hdmirx_dev);
-+	else
-+		hdmirx_plugout(hdmirx_dev);
 +
 +	mutex_unlock(&hdmirx_dev->work_lock);
 +}
@@ -2648,10 +2562,9 @@ index 000000000000..111111111111
 +		hdmirx_submodule_init(hdmirx_dev);
 +		hdmirx_update_bits(hdmirx_dev, SCDC_CONFIG, POWERPROVIDED,
 +				   POWERPROVIDED);
-+		hdmirx_hpd_ctrl(hdmirx_dev, true);
 +		hdmirx_phy_config(hdmirx_dev);
 +
-+		if (hdmirx_wait_lock_and_get_timing(hdmirx_dev)) {
++		if (hdmirx_wait_signal_lock(hdmirx_dev)) {
 +			hdmirx_plugout(hdmirx_dev);
 +			queue_delayed_work(system_unbound_wq,
 +					   &hdmirx_dev->delayed_work_hotplug,
@@ -2662,30 +2575,6 @@ index 000000000000..111111111111
 +		}
 +	}
 +	mutex_unlock(&hdmirx_dev->work_lock);
-+}
-+
-+static void hdmirx_delayed_work_heartbeat(struct work_struct *work)
-+{
-+	struct delayed_work *dwork = to_delayed_work(work);
-+	struct snps_hdmirx_dev *hdmirx_dev = container_of(dwork,
-+							struct snps_hdmirx_dev,
-+							delayed_work_heartbeat);
-+
-+	queue_work(system_highpri_wq, &hdmirx_dev->work_wdt_config);
-+	queue_delayed_work(system_unbound_wq,
-+			   &hdmirx_dev->delayed_work_heartbeat, HZ);
-+}
-+
-+static void hdmirx_work_wdt_config(struct work_struct *work)
-+{
-+	struct arm_smccc_res res;
-+	struct snps_hdmirx_dev *hdmirx_dev = container_of(work,
-+							struct snps_hdmirx_dev,
-+							work_wdt_config);
-+	struct v4l2_device *v4l2_dev = &hdmirx_dev->v4l2_dev;
-+
-+	arm_smccc_smc(SIP_WDT_CFG, WDT_PING, 0, 0, 0, 0, 0, 0, &res);
-+	v4l2_dbg(3, debug, v4l2_dev, "hb\n");
 +}
 +
 +static irqreturn_t hdmirx_5v_det_irq_handler(int irq, void *dev_id)
@@ -2707,6 +2596,11 @@ index 000000000000..111111111111
 +	.write = hdmirx_writel,
 +	.read = hdmirx_readl,
 +};
++
++static void devm_hdmirx_of_reserved_mem_device_release(void *dev)
++{
++	of_reserved_mem_device_release(dev);
++}
 +
 +static int hdmirx_parse_dt(struct snps_hdmirx_dev *hdmirx_dev)
 +{
@@ -2751,11 +2645,19 @@ index 000000000000..111111111111
 +		return PTR_ERR(hdmirx_dev->vo1_grf);
 +	}
 +
-+	hdmirx_dev->hpd_trigger_level = !device_property_read_bool(dev, "hpd-is-active-low");
++	if (!device_property_read_bool(dev, "hpd-is-active-low"))
++		hdmirx_dev->hpd_trigger_level_high = true;
 +
 +	ret = of_reserved_mem_device_init(dev);
-+	if (ret)
-+		dev_warn(dev, "No reserved memory for HDMIRX, use default CMA\n");
++	if (ret) {
++		dev_warn(dev, "no reserved memory for HDMIRX, use default CMA\n");
++	} else {
++		ret = devm_add_action_or_reset(dev,
++					       devm_hdmirx_of_reserved_mem_device_release,
++					       dev);
++		if (ret)
++			return ret;
++	}
 +
 +	return 0;
 +}
@@ -2787,7 +2689,7 @@ index 000000000000..111111111111
 +	hdmirx_clear_interrupt(hdmirx_dev, CEC_INT_CLEAR, 0xffffffff);
 +}
 +
-+static int hdmirx_init(struct snps_hdmirx_dev *hdmirx_dev)
++static void hdmirx_init(struct snps_hdmirx_dev *hdmirx_dev)
 +{
 +	hdmirx_update_bits(hdmirx_dev, PHY_CONFIG, PHY_RESET | PHY_PDDQ, 0);
 +
@@ -2799,50 +2701,60 @@ index 000000000000..111111111111
 +	 * all interrupts and clear interrupts status first.
 +	 */
 +	hdmirx_disable_all_interrupts(hdmirx_dev);
-+
-+	return 0;
 +}
++
++/* hdmi-4k-300mhz EDID produced by v4l2-ctl tool */
++static u8 __maybe_unused edid_default[] = {
++	0x00, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x00,
++	0x31, 0xd8, 0x34, 0x12, 0x00, 0x00, 0x00, 0x00,
++	0x22, 0x1a, 0x01, 0x03, 0x80, 0x60, 0x36, 0x78,
++	0x0f, 0xee, 0x91, 0xa3, 0x54, 0x4c, 0x99, 0x26,
++	0x0f, 0x50, 0x54, 0x2f, 0xcf, 0x00, 0x31, 0x59,
++	0x45, 0x59, 0x81, 0x80, 0x81, 0x40, 0x90, 0x40,
++	0x95, 0x00, 0xa9, 0x40, 0xb3, 0x00, 0x04, 0x74,
++	0x00, 0x30, 0xf2, 0x70, 0x5a, 0x80, 0xb0, 0x58,
++	0x8a, 0x00, 0xc0, 0x1c, 0x32, 0x00, 0x00, 0x1e,
++	0x00, 0x00, 0x00, 0xfd, 0x00, 0x18, 0x55, 0x18,
++	0x87, 0x1e, 0x00, 0x0a, 0x20, 0x20, 0x20, 0x20,
++	0x20, 0x20, 0x00, 0x00, 0x00, 0xfc, 0x00, 0x68,
++	0x64, 0x6d, 0x69, 0x2d, 0x34, 0x6b, 0x2d, 0x33,
++	0x30, 0x30, 0x0a, 0x20, 0x00, 0x00, 0x00, 0x10,
++	0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
++	0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0xc5,
++
++	0x02, 0x03, 0x40, 0xf1, 0x4f, 0x5f, 0x5e, 0x5d,
++	0x10, 0x1f, 0x04, 0x13, 0x22, 0x21, 0x20, 0x05,
++	0x14, 0x02, 0x11, 0x01, 0x23, 0x09, 0x07, 0x07,
++	0x83, 0x01, 0x00, 0x00, 0x6d, 0x03, 0x0c, 0x00,
++	0x10, 0x00, 0x00, 0x3c, 0x21, 0x00, 0x60, 0x01,
++	0x02, 0x03, 0x67, 0xd8, 0x5d, 0xc4, 0x01, 0x00,
++	0x00, 0x00, 0xe2, 0x00, 0xca, 0xe3, 0x05, 0x00,
++	0x00, 0xe3, 0x06, 0x01, 0x00, 0xe2, 0x0d, 0x5f,
++	0xa3, 0x66, 0x00, 0xa0, 0xf0, 0x70, 0x1f, 0x80,
++	0x30, 0x20, 0x35, 0x00, 0xc0, 0x1c, 0x32, 0x00,
++	0x00, 0x1e, 0x1a, 0x36, 0x80, 0xa0, 0x70, 0x38,
++	0x1f, 0x40, 0x30, 0x20, 0x35, 0x00, 0xc0, 0x1c,
++	0x32, 0x00, 0x00, 0x1a, 0x1a, 0x1d, 0x00, 0x80,
++	0x51, 0xd0, 0x1c, 0x20, 0x40, 0x80, 0x35, 0x00,
++	0xc0, 0x1c, 0x32, 0x00, 0x00, 0x1c, 0x00, 0x00,
++	0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xa1,
++};
 +
 +static void hdmirx_load_default_edid(struct snps_hdmirx_dev *hdmirx_dev)
 +{
-+	int ret;
-+	struct v4l2_edid def_edid;
++	struct v4l2_edid def_edid = {};
 +
 +	hdmirx_hpd_ctrl(hdmirx_dev, false);
 +
++	if (!IS_ENABLED(CONFIG_VIDEO_SYNOPSYS_HDMIRX_LOAD_DEFAULT_EDID))
++		return;
++
 +	/* disable hpd and write edid */
-+	def_edid.pad = 0;
-+	def_edid.start_block = 0;
-+	def_edid.blocks = EDID_NUM_BLOCKS_MAX;
++	def_edid.blocks = sizeof(edid_default) / EDID_BLOCK_SIZE;
++	def_edid.edid = edid_default;
 +
-+	if (IS_ENABLED(CONFIG_HDMIRX_LOAD_DEFAULT_EDID))
-+		def_edid.edid = edid_init_data_340M;
-+	else
-+		def_edid.edid = hdmirx_dev->edid;
-+
-+	ret = hdmirx_write_edid(hdmirx_dev, &def_edid, true);
-+	if (ret)
-+		dev_err(hdmirx_dev->dev, "%s: write edid failed\n", __func__);
-+}
-+
-+static void hdmirx_disable_irq(struct device *dev)
-+{
-+	struct snps_hdmirx_dev *hdmirx_dev = dev_get_drvdata(dev);
-+	struct arm_smccc_res res;
-+
-+	disable_irq(hdmirx_dev->hdmi_irq);
-+	disable_irq(hdmirx_dev->dma_irq);
-+	disable_irq(hdmirx_dev->det_irq);
-+
-+	arm_smccc_smc(RK_SIP_FIQ_CTRL, RK_SIP_FIQ_CTRL_FIQ_DIS,
-+		      RK_IRQ_HDMIRX_HDMI, 0, 0, 0, 0, 0, &res);
-+
-+	cancel_delayed_work_sync(&hdmirx_dev->delayed_work_hotplug);
-+	cancel_delayed_work_sync(&hdmirx_dev->delayed_work_res_change);
-+	cancel_delayed_work_sync(&hdmirx_dev->delayed_work_heartbeat);
-+	flush_work(&hdmirx_dev->work_wdt_config);
-+
-+	arm_smccc_smc(SIP_WDT_CFG, WDT_STOP, 0, 0, 0, 0, 0, 0, &res);
++	hdmirx_write_edid(hdmirx_dev, &def_edid);
++	hdmirx_hpd_ctrl(hdmirx_dev, true);
 +}
 +
 +static int hdmirx_disable(struct device *dev)
@@ -2850,27 +2762,14 @@ index 000000000000..111111111111
 +	struct snps_hdmirx_dev *hdmirx_dev = dev_get_drvdata(dev);
 +	struct v4l2_device *v4l2_dev = &hdmirx_dev->v4l2_dev;
 +
++	hdmirx_plugout(hdmirx_dev);
++	hdmirx_hpd_ctrl(hdmirx_dev, false);
++
 +	clk_bulk_disable_unprepare(hdmirx_dev->num_clks, hdmirx_dev->clks);
 +
 +	v4l2_dbg(2, debug, v4l2_dev, "%s: suspend\n", __func__);
 +
 +	return pinctrl_pm_select_sleep_state(dev);
-+}
-+
-+static void hdmirx_enable_irq(struct device *dev)
-+{
-+	struct snps_hdmirx_dev *hdmirx_dev = dev_get_drvdata(dev);
-+	struct arm_smccc_res res;
-+
-+	enable_irq(hdmirx_dev->hdmi_irq);
-+	enable_irq(hdmirx_dev->dma_irq);
-+	enable_irq(hdmirx_dev->det_irq);
-+
-+	arm_smccc_smc(RK_SIP_FIQ_CTRL, RK_SIP_FIQ_CTRL_FIQ_EN,
-+		      RK_IRQ_HDMIRX_HDMI, 0, 0, 0, 0, 0, &res);
-+
-+	queue_delayed_work(system_unbound_wq, &hdmirx_dev->delayed_work_hotplug,
-+			   msecs_to_jiffies(20));
 +}
 +
 +static int hdmirx_enable(struct device *dev)
@@ -2898,19 +2797,59 @@ index 000000000000..111111111111
 +	return 0;
 +}
 +
-+static int hdmirx_suspend(struct device *dev)
++static void hdmirx_disable_irq(struct device *dev)
 +{
++	struct snps_hdmirx_dev *hdmirx_dev = dev_get_drvdata(dev);
++
++	disable_irq(hdmirx_dev->det_irq);
++	disable_irq(hdmirx_dev->dma_irq);
++	disable_irq(hdmirx_dev->hdmi_irq);
++
++	cancel_delayed_work_sync(&hdmirx_dev->delayed_work_hotplug);
++	cancel_delayed_work_sync(&hdmirx_dev->delayed_work_res_change);
++}
++
++static void hdmirx_enable_irq(struct device *dev)
++{
++	struct snps_hdmirx_dev *hdmirx_dev = dev_get_drvdata(dev);
++
++	enable_irq(hdmirx_dev->hdmi_irq);
++	enable_irq(hdmirx_dev->dma_irq);
++	enable_irq(hdmirx_dev->det_irq);
++
++	queue_delayed_work(system_unbound_wq,
++			   &hdmirx_dev->delayed_work_hotplug,
++			   msecs_to_jiffies(110));
++}
++
++static __maybe_unused int hdmirx_suspend(struct device *dev)
++{
++	struct snps_hdmirx_dev *hdmirx_dev = dev_get_drvdata(dev);
++
 +	hdmirx_disable_irq(dev);
++
++	/* TODO store CEC HW state */
++	disable_irq(hdmirx_dev->cec->irq);
 +
 +	return hdmirx_disable(dev);
 +}
 +
-+static int hdmirx_resume(struct device *dev)
++static __maybe_unused int hdmirx_resume(struct device *dev)
 +{
++	struct snps_hdmirx_dev *hdmirx_dev = dev_get_drvdata(dev);
 +	int ret = hdmirx_enable(dev);
 +
 +	if (ret)
 +		return ret;
++
++	if (hdmirx_dev->edid_blocks_written) {
++		hdmirx_write_edid_data(hdmirx_dev, hdmirx_dev->edid,
++				       hdmirx_dev->edid_blocks_written);
++		hdmirx_hpd_ctrl(hdmirx_dev, true);
++	}
++
++	/* TODO restore CEC HW state */
++	enable_irq(hdmirx_dev->cec->irq);
 +
 +	hdmirx_enable_irq(dev);
 +
@@ -2993,20 +2932,15 @@ index 000000000000..111111111111
 +		return irq;
 +	}
 +
-+	hdmirx_dev->cec_notifier = cec_notifier_conn_register(dev, NULL, NULL);
-+	if (!hdmirx_dev->cec_notifier)
-+		return -EINVAL;
-+
 +	cec_data.hdmirx = hdmirx_dev;
 +	cec_data.dev = hdmirx_dev->dev;
 +	cec_data.ops = &hdmirx_cec_ops;
 +	cec_data.irq = irq;
 +
 +	hdmirx_dev->cec = snps_hdmirx_cec_register(&cec_data);
-+	if (!hdmirx_dev->cec) {
-+		cec_notifier_conn_unregister(hdmirx_dev->cec_notifier);
-+		return -EINVAL;
-+	}
++	if (IS_ERR(hdmirx_dev->cec))
++		return dev_err_probe(dev, PTR_ERR(hdmirx_dev->cec),
++				     "failed to register cec\n");
 +
 +	return 0;
 +}
@@ -3024,7 +2958,11 @@ index 000000000000..111111111111
 +	if (!hdmirx_dev)
 +		return -ENOMEM;
 +
-+	ret = dma_coerce_mask_and_coherent(dev, DMA_BIT_MASK(32));
++	/*
++	 * RK3588 HDMIRX SoC integration doesn't use IOMMU and can
++	 * address only first 32bit of the physical address space.
++	 */
++	ret = dma_set_mask_and_coherent(dev, DMA_BIT_MASK(32));
 +	if (ret)
 +		return ret;
 +
@@ -3052,13 +2990,10 @@ index 000000000000..111111111111
 +	init_completion(&hdmirx_dev->timer_base_lock);
 +	init_completion(&hdmirx_dev->avi_pkt_rcv);
 +
-+	INIT_WORK(&hdmirx_dev->work_wdt_config, hdmirx_work_wdt_config);
 +	INIT_DELAYED_WORK(&hdmirx_dev->delayed_work_hotplug,
 +			  hdmirx_delayed_work_hotplug);
 +	INIT_DELAYED_WORK(&hdmirx_dev->delayed_work_res_change,
 +			  hdmirx_delayed_work_res_change);
-+	INIT_DELAYED_WORK(&hdmirx_dev->delayed_work_heartbeat,
-+			  hdmirx_delayed_work_heartbeat);
 +
 +	hdmirx_dev->cur_fmt_fourcc = V4L2_PIX_FMT_BGR24;
 +	hdmirx_dev->timings = cea640x480;
@@ -3070,29 +3005,34 @@ index 000000000000..111111111111
 +	strscpy(v4l2_dev->name, dev_name(dev), sizeof(v4l2_dev->name));
 +
 +	hdl = &hdmirx_dev->hdl;
-+	v4l2_ctrl_handler_init(hdl, 1);
++	v4l2_ctrl_handler_init(hdl, 3);
 +
 +	hdmirx_dev->detect_tx_5v_ctrl = v4l2_ctrl_new_std(hdl, NULL,
 +							  V4L2_CID_DV_RX_POWER_PRESENT,
 +							  0, 1, 0, 0);
 +
-+	hdmirx_dev->rgb_range = v4l2_ctrl_new_std_menu(hdl, 0,
++	hdmirx_dev->rgb_range = v4l2_ctrl_new_std_menu(hdl, NULL,
 +						       V4L2_CID_DV_RX_RGB_RANGE,
 +						       V4L2_DV_RGB_RANGE_FULL, 0,
 +						       V4L2_DV_RGB_RANGE_AUTO);
 +
 +	hdmirx_dev->rgb_range->flags |= V4L2_CTRL_FLAG_READ_ONLY;
 +
++	hdmirx_dev->content_type =
++		v4l2_ctrl_new_std_menu(hdl, NULL, V4L2_CID_DV_RX_IT_CONTENT_TYPE,
++				       V4L2_DV_IT_CONTENT_TYPE_NO_ITC, 0,
++				       V4L2_DV_IT_CONTENT_TYPE_NO_ITC);
++
 +	if (hdl->error) {
-+		dev_err(dev, "v4l2 ctrl handler init failed\n");
 +		ret = hdl->error;
++		dev_err_probe(dev, ret, "v4l2 ctrl handler init failed\n");
 +		goto err_pm;
 +	}
 +	hdmirx_dev->v4l2_dev.ctrl_handler = hdl;
 +
 +	ret = v4l2_device_register(dev, &hdmirx_dev->v4l2_dev);
 +	if (ret < 0) {
-+		dev_err(dev, "register v4l2 device failed\n");
++		dev_err_probe(dev, ret, "v4l2 device registration failed\n");
 +		goto err_hdl;
 +	}
 +
@@ -3100,7 +3040,7 @@ index 000000000000..111111111111
 +	stream->hdmirx_dev = hdmirx_dev;
 +	ret = hdmirx_register_stream_vdev(stream);
 +	if (ret < 0) {
-+		dev_err(dev, "register video device failed\n");
++		dev_err_probe(dev, ret, "video device registration failed\n");
 +		goto err_unreg_v4l2_dev;
 +	}
 +
@@ -3112,10 +3052,17 @@ index 000000000000..111111111111
 +
 +	hdmirx_enable_irq(dev);
 +
++	hdmirx_dev->debugfs_dir = debugfs_create_dir(hdmirx_dev->v4l2_dev.name,
++						     v4l2_debugfs_root());
++
++	hdmirx_dev->infoframes = v4l2_debugfs_if_alloc(hdmirx_dev->debugfs_dir,
++						       V4L2_DEBUGFS_IF_AVI, hdmirx_dev,
++						       hdmirx_debugfs_if_read);
++
 +	return 0;
 +
 +err_unreg_video_dev:
-+	video_unregister_device(&hdmirx_dev->stream.vdev);
++	vb2_video_unregister_device(&hdmirx_dev->stream.vdev);
 +err_unreg_v4l2_dev:
 +	v4l2_device_unregister(&hdmirx_dev->v4l2_dev);
 +err_hdl:
@@ -3131,25 +3078,29 @@ index 000000000000..111111111111
 +	struct device *dev = &pdev->dev;
 +	struct snps_hdmirx_dev *hdmirx_dev = dev_get_drvdata(dev);
 +
++	v4l2_debugfs_if_free(hdmirx_dev->infoframes);
++	debugfs_remove_recursive(hdmirx_dev->debugfs_dir);
++
 +	snps_hdmirx_cec_unregister(hdmirx_dev->cec);
-+	cec_notifier_conn_unregister(hdmirx_dev->cec_notifier);
 +
 +	hdmirx_disable_irq(dev);
 +
-+	video_unregister_device(&hdmirx_dev->stream.vdev);
++	vb2_video_unregister_device(&hdmirx_dev->stream.vdev);
 +	v4l2_ctrl_handler_free(&hdmirx_dev->hdl);
 +	v4l2_device_unregister(&hdmirx_dev->v4l2_dev);
++
++	/* touched by hdmirx_disable()->hdmirx_plugout() */
++	hdmirx_dev->rgb_range = NULL;
++	hdmirx_dev->content_type = NULL;
 +
 +	hdmirx_disable(dev);
 +
 +	reset_control_bulk_assert(HDMIRX_NUM_RST, hdmirx_dev->resets);
-+
-+	of_reserved_mem_device_release(dev);
 +}
 +
 +static const struct of_device_id hdmirx_id[] = {
 +	{ .compatible = "rockchip,rk3588-hdmirx-ctrler" },
-+	{ },
++	{ }
 +};
 +MODULE_DEVICE_TABLE(of, hdmirx_id);
 +
@@ -3164,13 +3115,14 @@ index 000000000000..111111111111
 +};
 +module_platform_driver(hdmirx_driver);
 +
-+MODULE_DESCRIPTION("Rockchip HDMI Receiver Driver");
++MODULE_DESCRIPTION("Synopsys HDMI Receiver Driver");
 +MODULE_AUTHOR("Dingxian Wen <shawn.wen@rock-chips.com>");
 +MODULE_AUTHOR("Shreeya Patel <shreeya.patel@collabora.com>");
++MODULE_AUTHOR("Dmitry Osipenko <dmitry.osipenko@collabora.com>");
 +MODULE_LICENSE("GPL");
 diff --git a/drivers/media/platform/synopsys/hdmirx/snps_hdmirx.h b/drivers/media/platform/synopsys/hdmirx/snps_hdmirx.h
 new file mode 100644
-index 000000000000..111111111111
+index 000000000000..220ab99ca611
 --- /dev/null
 +++ b/drivers/media/platform/synopsys/hdmirx/snps_hdmirx.h
 @@ -0,0 +1,394 @@
@@ -3570,10 +3522,10 @@ index 000000000000..111111111111
 +#endif
 diff --git a/drivers/media/platform/synopsys/hdmirx/snps_hdmirx_cec.c b/drivers/media/platform/synopsys/hdmirx/snps_hdmirx_cec.c
 new file mode 100644
-index 000000000000..111111111111
+index 000000000000..134b6546da92
 --- /dev/null
 +++ b/drivers/media/platform/synopsys/hdmirx/snps_hdmirx_cec.c
-@@ -0,0 +1,285 @@
+@@ -0,0 +1,284 @@
 +// SPDX-License-Identifier: GPL-2.0
 +/*
 + * Copyright (c) 2021 Rockchip Electronics Co. Ltd.
@@ -3583,6 +3535,7 @@ index 000000000000..111111111111
 +
 +#include <linux/interrupt.h>
 +#include <linux/io.h>
++#include <linux/irq.h>
 +#include <linux/module.h>
 +#include <linux/platform_device.h>
 +#include <linux/slab.h>
@@ -3780,7 +3733,7 @@ index 000000000000..111111111111
 +	 */
 +	cec = devm_kzalloc(data->dev, sizeof(*cec), GFP_KERNEL);
 +	if (!cec)
-+		return NULL;
++		return ERR_PTR(-ENOMEM);
 +
 +	cec->dev = data->dev;
 +	cec->irq = data->irq;
@@ -3796,13 +3749,11 @@ index 000000000000..111111111111
 +	hdmirx_cec_write(cec, CEC_INT_CLEAR, ~0);
 +
 +	cec->adap = cec_allocate_adapter(&hdmirx_cec_ops, cec, "snps-hdmirx",
-+					 CEC_CAP_LOG_ADDRS | CEC_CAP_TRANSMIT |
-+					 CEC_CAP_RC | CEC_CAP_PASSTHROUGH |
-+					 CEC_CAP_MONITOR_ALL,
++					 CEC_CAP_DEFAULTS | CEC_CAP_MONITOR_ALL,
 +					 CEC_MAX_LOG_ADDRS);
 +	if (IS_ERR(cec->adap)) {
-+		dev_err(cec->dev, "cec adap allocate failed\n");
-+		return NULL;
++		dev_err(cec->dev, "cec adapter allocation failed\n");
++		return ERR_CAST(cec->adap);
 +	}
 +
 +	/* override the module pointer */
@@ -3811,7 +3762,7 @@ index 000000000000..111111111111
 +	ret = devm_add_action(cec->dev, hdmirx_cec_del, cec);
 +	if (ret) {
 +		cec_delete_adapter(cec->adap);
-+		return NULL;
++		return ERR_PTR(ret);
 +	}
 +
 +	irq_set_status_flags(cec->irq, IRQ_NOAUTOEN);
@@ -3822,21 +3773,21 @@ index 000000000000..111111111111
 +					"rk_hdmirx_cec", cec->adap);
 +	if (ret) {
 +		dev_err(cec->dev, "cec irq request failed\n");
-+		return NULL;
++		return ERR_PTR(ret);
 +	}
 +
 +	cec->notify = cec_notifier_cec_adap_register(cec->dev,
 +						     NULL, cec->adap);
 +	if (!cec->notify) {
-+		dev_err(cec->dev, "cec notify register failed\n");
-+		return NULL;
++		dev_err(cec->dev, "cec notifier registration failed\n");
++		return ERR_PTR(-EINVAL);
 +	}
 +
 +	ret = cec_register_adapter(cec->adap, cec->dev);
 +	if (ret < 0) {
-+		dev_err(cec->dev, "cec register adapter failed\n");
-+		cec_unregister_adapter(cec->adap);
-+		return NULL;
++		dev_err(cec->dev, "cec adapter registration failed\n");
++		cec_notifier_cec_adap_unregister(cec->notify, cec->adap);
++		return ERR_PTR(ret);
 +	}
 +
 +	irqs = CECTX_LINE_ERR | CECTX_NACK | CECRX_EOM | CECTX_DONE;
@@ -3861,7 +3812,7 @@ index 000000000000..111111111111
 +}
 diff --git a/drivers/media/platform/synopsys/hdmirx/snps_hdmirx_cec.h b/drivers/media/platform/synopsys/hdmirx/snps_hdmirx_cec.h
 new file mode 100644
-index 000000000000..111111111111
+index 000000000000..c55c403cdb9f
 --- /dev/null
 +++ b/drivers/media/platform/synopsys/hdmirx/snps_hdmirx_cec.h
 @@ -0,0 +1,44 @@
@@ -3909,27 +3860,243 @@ index 000000000000..111111111111
 +void snps_hdmirx_cec_unregister(struct hdmirx_cec *cec);
 +
 +#endif /* DW_HDMI_RX_CEC_H */
--- 
-Armbian
 
-From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+-- 
+2.48.1
+
+
+From git@z Thu Jan  1 00:00:00 1970
+Subject: [PATCH v12 4/6] arm64: dts: rockchip: Add device tree support for HDMI RX Controller
+From: Dmitry Osipenko <dmitry.osipenko@collabora.com>
+Date: Thu, 27 Feb 2025 08:50:23 +0300
+Message-Id: <20250227055025.766018-5-dmitry.osipenko@collabora.com>
+To: Shreeya Patel <shreeya.patel@collabora.com>, Heiko Stuebner <heiko@sntech.de>, Mauro Carvalho Chehab <mchehab@kernel.org>, Hans Verkuil <hverkuil@xs4all.nl>, Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, jose.abreu@synopsys.com, nelson.costa@synopsys.com, shawn.wen@rock-chips.com, nicolas.dufresne@collabora.com, Sebastian Reichel <sebastian.reichel@collabora.com>
+Cc: kernel@collabora.com, linux-media@vger.kernel.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org, Tim Surber <me@timsurber.de>, Christophe JAILLET <christophe.jaillet@wanadoo.fr>, Diederik de Haas <didi.debian@cknow.org>
+In-Reply-To: <20250227055025.766018-1-dmitry.osipenko@collabora.com>
+References: <20250227055025.766018-1-dmitry.osipenko@collabora.com>
+List-Id: <devicetree.vger.kernel.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+From: Shreeya Patel <shreeya.patel@collabora.com>
+
+Add device tree support for Synopsys DesignWare HDMI RX
+Controller.
+
+Reviewed-by: Dmitry Osipenko <dmitry.osipenko@collabora.com>
+Tested-by: Dmitry Osipenko <dmitry.osipenko@collabora.com>
+Co-developed-by: Dingxian Wen <shawn.wen@rock-chips.com>
+Signed-off-by: Dingxian Wen <shawn.wen@rock-chips.com>
+Signed-off-by: Shreeya Patel <shreeya.patel@collabora.com>
+Signed-off-by: Dmitry Osipenko <dmitry.osipenko@collabora.com>
+---
+ .../dts/rockchip/rk3588-base-pinctrl.dtsi     | 14 +++++
+ .../arm64/boot/dts/rockchip/rk3588-extra.dtsi | 57 +++++++++++++++++++
+ 2 files changed, 71 insertions(+)
+
+diff --git a/arch/arm64/boot/dts/rockchip/rk3588-base-pinctrl.dtsi b/arch/arm64/boot/dts/rockchip/rk3588-base-pinctrl.dtsi
+index 7f874c77410c..2d4b9986a177 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3588-base-pinctrl.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3588-base-pinctrl.dtsi
+@@ -594,6 +594,20 @@ hdmim0_tx1_hpd: hdmim0-tx1-hpd {
+ 				/* hdmim0_tx1_hpd */
+ 				<1 RK_PA6 5 &pcfg_pull_none>;
+ 		};
++
++		/omit-if-no-ref/
++		hdmim1_rx: hdmim1-rx {
++			rockchip,pins =
++				/* hdmim1_rx_cec */
++				<3 RK_PD1 5 &pcfg_pull_none>,
++				/* hdmim1_rx_scl */
++				<3 RK_PD2 5 &pcfg_pull_none_smt>,
++				/* hdmim1_rx_sda */
++				<3 RK_PD3 5 &pcfg_pull_none_smt>,
++				/* hdmim1_rx_hpdin */
++				<3 RK_PD4 5 &pcfg_pull_none>;
++		};
++
+ 		/omit-if-no-ref/
+ 		hdmim1_rx_cec: hdmim1-rx-cec {
+ 			rockchip,pins =
+diff --git a/arch/arm64/boot/dts/rockchip/rk3588-extra.dtsi b/arch/arm64/boot/dts/rockchip/rk3588-extra.dtsi
+index 4a950907ea6f..b7d06f93c8ce 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3588-extra.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3588-extra.dtsi
+@@ -7,6 +7,30 @@
+ #include "rk3588-extra-pinctrl.dtsi"
+ 
+ / {
++	reserved-memory {
++		#address-cells = <2>;
++		#size-cells = <2>;
++		ranges;
++
++		/*
++		 * The 4k HDMI capture controller works only with 32bit
++		 * phys addresses and doesn't support IOMMU. HDMI RX CMA
++		 * must be reserved below 4GB.
++		 * The size of 160MB was determined as follows:
++		 * (3840 * 2160 pixels) * (4 bytes/pixel) * (2 frames/buffer) / 10^6 = 66MB
++		 * To ensure sufficient support for practical use-cases,
++		 * we doubled the 66MB value.
++		 */
++		hdmi_receiver_cma: hdmi-receiver-cma {
++			compatible = "shared-dma-pool";
++			alloc-ranges = <0x0 0x0 0x0 0xffffffff>;
++			size = <0x0 (160 * 0x100000)>; /* 160MiB */
++			alignment = <0x0 0x40000>; /* 64K */
++			no-map;
++			status = "disabled";
++		};
++	};
++
+ 	usb_host1_xhci: usb@fc400000 {
+ 		compatible = "rockchip,rk3588-dwc3", "snps,dwc3";
+ 		reg = <0x0 0xfc400000 0x0 0x400000>;
+@@ -135,6 +159,39 @@ i2s10_8ch: i2s@fde00000 {
+ 		status = "disabled";
+ 	};
+ 
++	hdmi_receiver: hdmi_receiver@fdee0000 {
++		compatible = "rockchip,rk3588-hdmirx-ctrler", "snps,dw-hdmi-rx";
++		reg = <0x0 0xfdee0000 0x0 0x6000>;
++		power-domains = <&power RK3588_PD_VO1>;
++		rockchip,grf = <&sys_grf>;
++		rockchip,vo1-grf = <&vo1_grf>;
++		interrupts = <GIC_SPI 177 IRQ_TYPE_LEVEL_HIGH 0>,
++			     <GIC_SPI 178 IRQ_TYPE_LEVEL_HIGH 0>,
++			     <GIC_SPI 179 IRQ_TYPE_LEVEL_HIGH 0>;
++		interrupt-names = "cec", "hdmi", "dma";
++		clocks = <&cru ACLK_HDMIRX>,
++			 <&cru CLK_HDMIRX_AUD>,
++			 <&cru CLK_CR_PARA>,
++			 <&cru PCLK_HDMIRX>,
++			 <&cru CLK_HDMIRX_REF>,
++			 <&cru PCLK_S_HDMIRX>,
++			 <&cru HCLK_VO1>;
++		clock-names = "aclk",
++			      "audio",
++			      "cr_para",
++			      "pclk",
++			      "ref",
++			      "hclk_s_hdmirx",
++			      "hclk_vo1";
++		resets = <&cru SRST_A_HDMIRX>, <&cru SRST_P_HDMIRX>,
++			 <&cru SRST_HDMIRX_REF>, <&cru SRST_A_HDMIRX_BIU>;
++		reset-names = "axi", "apb", "ref", "biu";
++		memory-region = <&hdmi_receiver_cma>;
++		pinctrl-0 = <&hdmim1_rx>;
++		pinctrl-names = "default";
++		status = "disabled";
++	};
++
+ 	pcie3x4: pcie@fe150000 {
+ 		compatible = "rockchip,rk3588-pcie", "rockchip,rk3568-pcie";
+ 		#address-cells = <3>;
+
+-- 
+2.48.1
+
+
+From git@z Thu Jan  1 00:00:00 1970
+Subject: [PATCH v12 5/6] arm64: dts: rockchip: Enable HDMI receiver on rock-5b
+From: Dmitry Osipenko <dmitry.osipenko@collabora.com>
+Date: Thu, 27 Feb 2025 08:50:24 +0300
+Message-Id: <20250227055025.766018-6-dmitry.osipenko@collabora.com>
+To: Shreeya Patel <shreeya.patel@collabora.com>, Heiko Stuebner <heiko@sntech.de>, Mauro Carvalho Chehab <mchehab@kernel.org>, Hans Verkuil <hverkuil@xs4all.nl>, Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, jose.abreu@synopsys.com, nelson.costa@synopsys.com, shawn.wen@rock-chips.com, nicolas.dufresne@collabora.com, Sebastian Reichel <sebastian.reichel@collabora.com>
+Cc: kernel@collabora.com, linux-media@vger.kernel.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org, Tim Surber <me@timsurber.de>, Christophe JAILLET <christophe.jaillet@wanadoo.fr>, Diederik de Haas <didi.debian@cknow.org>
+In-Reply-To: <20250227055025.766018-1-dmitry.osipenko@collabora.com>
+References: <20250227055025.766018-1-dmitry.osipenko@collabora.com>
+List-Id: <devicetree.vger.kernel.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
 From: Sebastian Reichel <sebastian.reichel@collabora.com>
-Date: Mon, 29 Jul 2024 17:29:46 +0200
-Subject: arm64: defconfig: Enable Synopsys HDMI receiver
+
+The Rock 5B has a Micro HDMI port, which can be used for receiving
+HDMI data. This enables support for it.
+
+Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+Signed-off-by: Shreeya Patel <shreeya.patel@collabora.com>
+Signed-off-by: Dmitry Osipenko <dmitry.osipenko@collabora.com>
+---
+ .../arm64/boot/dts/rockchip/rk3588-rock-5b.dts | 18 ++++++++++++++++++
+ 1 file changed, 18 insertions(+)
+
+diff --git a/arch/arm64/boot/dts/rockchip/rk3588-rock-5b.dts b/arch/arm64/boot/dts/rockchip/rk3588-rock-5b.dts
+index d597112f1d5b..377824e69e20 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3588-rock-5b.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3588-rock-5b.dts
+@@ -220,6 +220,18 @@ hdmi0_out_con: endpoint {
+ 	};
+ };
+ 
++&hdmi_receiver_cma {
++	status = "okay";
++};
++
++&hdmi_receiver {
++	status = "okay";
++	hpd-gpios = <&gpio1 RK_PC6 GPIO_ACTIVE_LOW>;
++	pinctrl-0 = <&hdmim1_rx_cec &hdmim1_rx_hpdin &hdmim1_rx_scl &hdmim1_rx_sda &hdmirx_hpd>;
++	pinctrl-names = "default";
++	memory-region = <&hdmi_receiver_cma>;
++};
++
+ &hdptxphy_hdmi0 {
+ 	status = "okay";
+ };
+@@ -377,6 +389,12 @@ &pcie3x4 {
+ };
+ 
+ &pinctrl {
++	hdmirx {
++		hdmirx_hpd: hdmirx-5v-detection {
++			rockchip,pins = <1 RK_PC6 RK_FUNC_GPIO &pcfg_pull_none>;
++		};
++	};
++
+ 	hym8563 {
+ 		hym8563_int: hym8563-int {
+ 			rockchip,pins = <0 RK_PB0 RK_FUNC_GPIO &pcfg_pull_none>;
+
+-- 
+2.48.1
+
+
+From git@z Thu Jan  1 00:00:00 1970
+Subject: [PATCH v12 6/6] arm64: defconfig: Enable Synopsys HDMI receiver
+From: Dmitry Osipenko <dmitry.osipenko@collabora.com>
+Date: Thu, 27 Feb 2025 08:50:25 +0300
+Message-Id: <20250227055025.766018-7-dmitry.osipenko@collabora.com>
+To: Shreeya Patel <shreeya.patel@collabora.com>, Heiko Stuebner <heiko@sntech.de>, Mauro Carvalho Chehab <mchehab@kernel.org>, Hans Verkuil <hverkuil@xs4all.nl>, Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk+dt@kernel.org>, Conor Dooley <conor+dt@kernel.org>, jose.abreu@synopsys.com, nelson.costa@synopsys.com, shawn.wen@rock-chips.com, nicolas.dufresne@collabora.com, Sebastian Reichel <sebastian.reichel@collabora.com>
+Cc: kernel@collabora.com, linux-media@vger.kernel.org, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org, Tim Surber <me@timsurber.de>, Christophe JAILLET <christophe.jaillet@wanadoo.fr>, Diederik de Haas <didi.debian@cknow.org>
+In-Reply-To: <20250227055025.766018-1-dmitry.osipenko@collabora.com>
+References: <20250227055025.766018-1-dmitry.osipenko@collabora.com>
+List-Id: <devicetree.vger.kernel.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+
+From: Sebastian Reichel <sebastian.reichel@collabora.com>
 
 The Rockchip RK3588 has a built-in HDMI receiver block from
 Synopsys. Let's enable the driver for it.
 
 Signed-off-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+Signed-off-by: Dmitry Osipenko <dmitry.osipenko@collabora.com>
 ---
  arch/arm64/configs/defconfig | 1 +
  1 file changed, 1 insertion(+)
 
 diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index 111111111111..222222222222 100644
+index cb7da4415599..6ed1ad3c0055 100644
 --- a/arch/arm64/configs/defconfig
 +++ b/arch/arm64/configs/defconfig
-@@ -860,6 +860,7 @@ CONFIG_VIDEO_SAMSUNG_EXYNOS_GSC=m
+@@ -859,6 +859,7 @@ CONFIG_VIDEO_SAMSUNG_EXYNOS_GSC=m
  CONFIG_VIDEO_SAMSUNG_S5P_JPEG=m
  CONFIG_VIDEO_SAMSUNG_S5P_MFC=m
  CONFIG_VIDEO_SUN6I_CSI=m
@@ -3937,181 +4104,8 @@ index 111111111111..222222222222 100644
  CONFIG_VIDEO_TI_J721E_CSI2RX=m
  CONFIG_VIDEO_HANTRO=m
  CONFIG_VIDEO_IMX219=m
+
 -- 
-Armbian
+2.48.1
 
-From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
-From: Muhammed Efe Cetin <efectn@protonmail.com>
-Date: Thu, 1 Aug 2024 16:47:35 +0300
-Subject: comment v4l2 error on hdmirx
-
----
- drivers/media/platform/synopsys/hdmirx/snps_hdmirx.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
-
-diff --git a/drivers/media/platform/synopsys/hdmirx/snps_hdmirx.c b/drivers/media/platform/synopsys/hdmirx/snps_hdmirx.c
-index 111111111111..222222222222 100644
---- a/drivers/media/platform/synopsys/hdmirx/snps_hdmirx.c
-+++ b/drivers/media/platform/synopsys/hdmirx/snps_hdmirx.c
-@@ -1180,7 +1180,7 @@ static int hdmirx_wait_lock_and_get_timing(struct snps_hdmirx_dev *hdmirx_dev)
- 			break;
- 
- 		if (!tx_5v_power_present(hdmirx_dev)) {
--			v4l2_err(v4l2_dev, "%s: HDMI pull out, return\n", __func__);
-+			//v4l2_err(v4l2_dev, "%s: HDMI pull out, return\n", __func__);
- 			return -1;
- 		}
- 
--- 
-Armbian
-
-From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
-From: Ben Hoff <hoff.benjamin.k@gmail.com>
-Date: Sun, 15 Sep 2024 14:52:17 -0400
-Subject: fix spurious triggering of irq 5v while plugout code is running
-
----
- drivers/media/platform/synopsys/hdmirx/snps_hdmirx.c | 12 ++++++++++
- 1 file changed, 12 insertions(+)
-
-diff --git a/drivers/media/platform/synopsys/hdmirx/snps_hdmirx.c b/drivers/media/platform/synopsys/hdmirx/snps_hdmirx.c
-index 111111111111..222222222222 100644
---- a/drivers/media/platform/synopsys/hdmirx/snps_hdmirx.c
-+++ b/drivers/media/platform/synopsys/hdmirx/snps_hdmirx.c
-@@ -745,10 +745,17 @@ static void hdmirx_interrupts_setup(struct snps_hdmirx_dev *hdmirx_dev, bool en)
- static void hdmirx_plugout(struct snps_hdmirx_dev *hdmirx_dev)
- {
- 	struct arm_smccc_res res;
-+    int irq;
- 
- 	hdmirx_update_bits(hdmirx_dev, SCDC_CONFIG, POWERPROVIDED, 0);
- 	hdmirx_interrupts_setup(hdmirx_dev, false);
- 	hdmirx_hpd_ctrl(hdmirx_dev, false);
-+    irq = gpiod_to_irq(hdmirx_dev->detect_5v_gpio);
-+
-+    if (irq >= 0) {
-+        disable_irq(irq);
-+    }
-+
- 	hdmirx_update_bits(hdmirx_dev, DMA_CONFIG6, HDMIRX_DMA_EN, 0);
- 	hdmirx_update_bits(hdmirx_dev, DMA_CONFIG4,
- 			   LINE_FLAG_INT_EN |
-@@ -766,6 +773,11 @@ static void hdmirx_plugout(struct snps_hdmirx_dev *hdmirx_dev)
- 	cancel_delayed_work_sync(&hdmirx_dev->delayed_work_heartbeat);
- 	flush_work(&hdmirx_dev->work_wdt_config);
- 	arm_smccc_smc(SIP_WDT_CFG, WDT_STOP, 0, 0, 0, 0, 0, 0, &res);
-+
-+    hdmirx_hpd_ctrl(hdmirx_dev, true);
-+    if (irq >= 0) {
-+        enable_irq(irq);
-+    }
- }
- 
- static int hdmirx_set_edid(struct file *file, void *fh, struct v4l2_edid *edid)
--- 
-Armbian
-
-From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
-From: Ben Hoff <hoff.benjamin.k@gmail.com>
-Date: Sun, 15 Sep 2024 14:53:25 -0400
-Subject: remove timing handling from plug in function
-
----
- drivers/media/platform/synopsys/hdmirx/snps_hdmirx.c | 7 -------
- 1 file changed, 7 deletions(-)
-
-diff --git a/drivers/media/platform/synopsys/hdmirx/snps_hdmirx.c b/drivers/media/platform/synopsys/hdmirx/snps_hdmirx.c
-index 111111111111..222222222222 100644
---- a/drivers/media/platform/synopsys/hdmirx/snps_hdmirx.c
-+++ b/drivers/media/platform/synopsys/hdmirx/snps_hdmirx.c
-@@ -2202,13 +2202,6 @@ static void hdmirx_plugin(struct snps_hdmirx_dev *hdmirx_dev)
- 	hdmirx_hpd_ctrl(hdmirx_dev, true);
- 	hdmirx_phy_config(hdmirx_dev);
- 	ret = hdmirx_wait_lock_and_get_timing(hdmirx_dev);
--	if (ret) {
--		hdmirx_plugout(hdmirx_dev);
--		queue_delayed_work(system_unbound_wq,
--				   &hdmirx_dev->delayed_work_hotplug,
--				   msecs_to_jiffies(200));
--		return;
--	}
- 	hdmirx_dma_config(hdmirx_dev);
- 	hdmirx_interrupts_setup(hdmirx_dev, true);
- }
--- 
-Armbian
-
-From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
-From: Ben Hoff <hoff.benjamin.k@gmail.com>
-Date: Mon, 23 Sep 2024 09:43:38 -0400
-Subject: expose itc type to v4l2 in synopsys hdmir rx
-
----
- drivers/media/platform/synopsys/hdmirx/snps_hdmirx.c | 16 +++++++++-
- 1 file changed, 15 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/media/platform/synopsys/hdmirx/snps_hdmirx.c b/drivers/media/platform/synopsys/hdmirx/snps_hdmirx.c
-index 111111111111..222222222222 100644
---- a/drivers/media/platform/synopsys/hdmirx/snps_hdmirx.c
-+++ b/drivers/media/platform/synopsys/hdmirx/snps_hdmirx.c
-@@ -151,6 +151,7 @@ struct snps_hdmirx_dev {
- 	struct v4l2_ctrl_handler hdl;
- 	struct v4l2_ctrl *detect_tx_5v_ctrl;
- 	struct v4l2_ctrl *rgb_range;
-+    struct v4l2_ctrl *content_type;
- 	struct v4l2_dv_timings timings;
- 	struct gpio_desc *detect_5v_gpio;
- 	struct work_struct work_wdt_config;
-@@ -512,6 +513,11 @@ static void hdmirx_get_avi_infoframe(struct snps_hdmirx_dev *hdmirx_dev)
- 	}
- 
- 	v4l2_ctrl_s_ctrl(hdmirx_dev->rgb_range, frame.avi.quantization_range);
-+    if (frame.avi.itc) {
-+        v4l2_ctrl_s_ctrl(hdmirx_dev->content_type, frame.avi.content_type);
-+    } else {
-+        v4l2_ctrl_s_ctrl(hdmirx_dev->content_type, V4L2_DV_IT_CONTENT_TYPE_NO_ITC);
-+    }
- }
- 
- /*
-@@ -1192,6 +1198,7 @@ static int hdmirx_wait_lock_and_get_timing(struct snps_hdmirx_dev *hdmirx_dev)
- 			break;
- 
- 		if (!tx_5v_power_present(hdmirx_dev)) {
-+            v4l2_ctrl_s_ctrl(hdmirx_dev->content_type, V4L2_DV_IT_CONTENT_TYPE_NO_ITC);
- 			//v4l2_err(v4l2_dev, "%s: HDMI pull out, return\n", __func__);
- 			return -1;
- 		}
-@@ -1204,6 +1211,7 @@ static int hdmirx_wait_lock_and_get_timing(struct snps_hdmirx_dev *hdmirx_dev)
- 			 __func__, hdmirx_dev->tmds_clk_ratio);
- 		v4l2_err(v4l2_dev, "%s: mu_st:%#x, scdc_st:%#x, dma_st10:%#x\n",
- 			 __func__, mu_status, scdc_status, dma_st10);
-+        v4l2_ctrl_s_ctrl(hdmirx_dev->content_type, V4L2_DV_IT_CONTENT_TYPE_NO_ITC);
- 		return -1;
- 	}
- 
-@@ -2668,7 +2676,7 @@ static int hdmirx_probe(struct platform_device *pdev)
- 	strscpy(v4l2_dev->name, dev_name(dev), sizeof(v4l2_dev->name));
- 
- 	hdl = &hdmirx_dev->hdl;
--	v4l2_ctrl_handler_init(hdl, 1);
-+	v4l2_ctrl_handler_init(hdl, 3);
- 
- 	hdmirx_dev->detect_tx_5v_ctrl = v4l2_ctrl_new_std(hdl, NULL,
- 							  V4L2_CID_DV_RX_POWER_PRESENT,
-@@ -2681,6 +2689,12 @@ static int hdmirx_probe(struct platform_device *pdev)
- 
- 	hdmirx_dev->rgb_range->flags |= V4L2_CTRL_FLAG_READ_ONLY;
- 
-+    hdmirx_dev->content_type = v4l2_ctrl_new_std_menu(hdl, NULL,
-+            V4L2_CID_DV_RX_IT_CONTENT_TYPE,
-+            V4L2_DV_IT_CONTENT_TYPE_NO_ITC,
-+            0,
-+            V4L2_DV_IT_CONTENT_TYPE_NO_ITC);
-+
- 	if (hdl->error) {
- 		dev_err(dev, "v4l2 ctrl handler init failed\n");
- 		ret = hdl->error;
--- 
-Armbian
 
